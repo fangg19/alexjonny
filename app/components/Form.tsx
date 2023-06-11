@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import axios, { AxiosRequestConfig } from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 import Loader from "./Loader";
+import { cls } from "../utils/utils";
 
 interface FormProps {
   emailSent: boolean;
@@ -78,10 +79,13 @@ const Form = (props: FormProps) => {
 
   return (
     <div>
-      <form method="post">
+      <form className="flex flex-col gap-6" method="post">
         <div className="flex flex-col items-start">
           <input
-            className="bg-neutral-950 border border-neutral-700 px-4 py-2 w-full focus:outline-none focus:border-neutral-200"
+            className={cls(
+              "bg-neutral-950 border border-neutral-700 px-4 py-2 w-full focus:outline-none focus:border-neutral-200",
+              errors.name && "border-red-500"
+            )}
             type="text"
             placeholder="name"
             {...register("name", {
@@ -90,13 +94,18 @@ const Form = (props: FormProps) => {
             name="name"
           />
           {errors.name && (
-            <span className="text-sm text-red-500">Let me know your name.</span>
+            <span className="text-xs text-red-500 mt-2">
+              Let me know your name.
+            </span>
           )}
         </div>
 
         <div className="flex flex-col items-start">
           <input
-            className="bg-neutral-950 border border-neutral-700 px-4 py-2 w-full focus:outline-none focus:border-neutral-200"
+            className={cls(
+              "bg-neutral-950 border border-neutral-700 px-4 py-2 w-full focus:outline-none focus:border-neutral-200",
+              errors.email && "border-red-500"
+            )}
             type="email"
             placeholder="e-mail"
             {...register("email", {
@@ -106,7 +115,7 @@ const Form = (props: FormProps) => {
             name="email"
           />
           {errors.email && (
-            <span className="text-sm text-red-500">
+            <span className="text-xs text-red-500 mt-2">
               I need your valid e-mail address.
             </span>
           )}
@@ -114,14 +123,17 @@ const Form = (props: FormProps) => {
 
         <div className="flex flex-col items-start">
           <input
-            className="bg-neutral-950 border border-neutral-700 px-4 py-2 w-full focus:outline-none focus:border-neutral-200"
+            className={cls(
+              "bg-neutral-950 border border-neutral-700 px-4 py-2 w-full focus:outline-none focus:border-neutral-200",
+              errors.subject && "border-red-500"
+            )}
             type="text"
             placeholder="subject"
             {...register("subject", { required: true })}
             name="subject"
           />
           {errors.subject && (
-            <span className="text-sm text-red-500">
+            <span className="text-xs text-red-500 mt-2">
               Please enter a subject.
             </span>
           )}
@@ -129,14 +141,17 @@ const Form = (props: FormProps) => {
 
         <div className="flex flex-col items-start">
           <textarea
-            className="bg-neutral-950 border border-neutral-700 px-4 py-2 w-full focus:outline-none focus:border-neutral-200"
+            className={cls(
+              "bg-neutral-950 border border-neutral-700 px-4 py-2 w-full focus:outline-none focus:border-neutral-200",
+              errors.message && "border-red-500"
+            )}
             placeholder="message"
             rows={5}
             {...register("message", { required: true })}
             name="message"
           />
           {errors.message && (
-            <span className="text-sm text-red-500">
+            <span className="text-xs text-red-500 mt-2">
               You need to type your message.
             </span>
           )}
@@ -152,8 +167,6 @@ const Form = (props: FormProps) => {
   );
 };
 
-export default Form;
-
 const ContactForm = () => {
   const [emailSent, setEmailSent] = useState(false);
   const [emailError, setEmailError] = useState(false);
@@ -162,7 +175,7 @@ const ContactForm = () => {
   const reRef = useRef<any>();
 
   return (
-    <div className="flex flex-col w-full lg:w-1/2 gap-6">
+    <div className="flex flex-col w-full lg:w-1/2">
       <ReCAPTCHA
         sitekey={
           process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as unknown as string
@@ -190,3 +203,5 @@ const ContactForm = () => {
     </div>
   );
 };
+
+export default ContactForm;
