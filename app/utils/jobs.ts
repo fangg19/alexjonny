@@ -4,9 +4,11 @@ export interface JobType {
   content: {
     title: string;
     description: string[];
+    url?: string;
   }[];
   company: string;
   period: string;
+  techStack: string[];
 }
 
 export const jobs: JobType[] = [
@@ -15,15 +17,16 @@ export const jobs: JobType[] = [
     jobTitle: "Frontend Developer",
     content: [
       {
-        title: "UncleBob e-commerce project - www.unclebob.ro",
+        title: "Sessions - Video Conferencing Platform",
         description: [
           "Developed the components and the interface for the checkout section. Updated and redesigned the existing flow for registered users and built a new flow for guest user",
           "Created the Register and Login pages from scratch",
         ],
+        url: "https://sessions.us/",
       },
 
       {
-        title: "UncleBob e-commerce project - www.unclebob.ro",
+        title: "Sessions - Webinars & Workshops module",
         description: [
           "Developed the components and the interface for the checkout section. Updated and redesigned the existing flow for registered users and built a new flow for guest user",
           "Created the Register and Login pages from scratch",
@@ -33,17 +36,19 @@ export const jobs: JobType[] = [
     company: "Sessions",
 
     period: "sept 2022 - present",
+    techStack: ["React", "Next.js", "TypeScript", "GraphQL", "SCSS"],
   },
   {
     id: 2,
     jobTitle: "Frontend Developer",
     content: [
       {
-        title: "UncleBob e-commerce project - www.unclebob.ro",
+        title: "UncleBob e-commerce project",
         description: [
           "Developed the components and the interface for the checkout section. Updated and redesigned the existing flow for registered users and built a new flow for guest user",
           "Created the Register and Login pages from scratch",
         ],
+        url: "https://www.unclebob.ro/",
       },
 
       {
@@ -56,5 +61,6 @@ export const jobs: JobType[] = [
     ],
     company: "BOB",
     period: "sept 2021 - aug 2022",
+    techStack: ["React", "Next.js", "TypeScript", "GraphQL", "SCSS"],
   },
 ];

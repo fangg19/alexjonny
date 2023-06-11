@@ -1,0 +1,192 @@
+"use client";
+import React, { useState, useRef } from "react";
+import Button from "./Button";
+import { useForm } from "react-hook-form";
+import axios, { AxiosRequestConfig } from "axios";
+import ReCAPTCHA from "react-google-recaptcha";
+import Loader from "./Loader";
+
+interface FormProps {
+  emailSent: boolean;
+  setEmailSent: React.Dispatch<React.SetStateAction<boolean>>;
+  emailError: boolean;
+  setEmailError: React.Dispatch<React.SetStateAction<boolean>>;
+  loader: boolean;
+  setLoader: React.Dispatch<React.SetStateAction<boolean>>;
+  reRef: React.MutableRefObject<ReCAPTCHA>;
+}
+
+const Form = (props: FormProps) => {
+  const {
+    emailSent,
+    setEmailSent,
+    emailError,
+    setEmailError,
+    loader,
+    setLoader,
+    reRef,
+  } = props;
+
+  const clearMessage = () => {
+    setTimeout(() => {
+      setEmailSent(false);
+    }, 5000);
+  };
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
+
+  const onSubmitForm = async (values) => {
+    setLoader(true);
+
+    const token = await reRef?.current.executeAsync();
+    reRef?.current.reset();
+    console.log(token);
+
+    const config: AxiosRequestConfig = {
+      method: "post",
+      url: `${process.env.NEXT_PUBLIC_API_KEY}`,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: { ...values, token },
+    };
+
+    try {
+      const response = await axios(config);
+
+      console.log(response);
+
+      if (response.status === 200) {
+        setLoader(false);
+        setEmailError(false);
+        setEmailSent(true);
+        clearMessage();
+        reset();
+      }
+    } catch (error) {
+      console.log(error);
+      setLoader(false);
+      setEmailError(true);
+      setEmailSent(false);
+    }
+  };
+
+  return (
+    <div>
+      <form method="post">
+        <div className="flex flex-col items-start">
+          <input
+            className="bg-neutral-950 border border-neutral-700 px-4 py-2 w-full focus:outline-none focus:border-neutral-200"
+            type="text"
+            placeholder="name"
+            {...register("name", {
+              required: true,
+            })}
+            name="name"
+          />
+          {errors.name && (
+            <span className="text-sm text-red-500">Let me know your name.</span>
+          )}
+        </div>
+
+        <div className="flex flex-col items-start">
+          <input
+            className="bg-neutral-950 border border-neutral-700 px-4 py-2 w-full focus:outline-none focus:border-neutral-200"
+            type="email"
+            placeholder="e-mail"
+            {...register("email", {
+              required: true,
+              pattern: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
+            })}
+            name="email"
+          />
+          {errors.email && (
+            <span className="text-sm text-red-500">
+              I need your valid e-mail address.
+            </span>
+          )}
+        </div>
+
+        <div className="flex flex-col items-start">
+          <input
+            className="bg-neutral-950 border border-neutral-700 px-4 py-2 w-full focus:outline-none focus:border-neutral-200"
+            type="text"
+            placeholder="subject"
+            {...register("subject", { required: true })}
+            name="subject"
+          />
+          {errors.subject && (
+            <span className="text-sm text-red-500">
+              Please enter a subject.
+            </span>
+          )}
+        </div>
+
+        <div className="flex flex-col items-start">
+          <textarea
+            className="bg-neutral-950 border border-neutral-700 px-4 py-2 w-full focus:outline-none focus:border-neutral-200"
+            placeholder="message"
+            rows={5}
+            {...register("message", { required: true })}
+            name="message"
+          />
+          {errors.message && (
+            <span className="text-sm text-red-500">
+              You need to type your message.
+            </span>
+          )}
+        </div>
+
+        <div className="self-end">
+          <Button type="secondary" onClick={handleSubmit(onSubmitForm)}>
+            sendMessage()
+          </Button>
+        </div>
+      </form>
+    </div>
+  );
+};
+
+export default Form;
+
+const ContactForm = () => {
+  const [emailSent, setEmailSent] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [loader, setLoader] = useState(false);
+
+  const reRef = useRef<any>();
+
+  return (
+    <div className="flex flex-col w-full lg:w-1/2 gap-6">
+      <ReCAPTCHA
+        sitekey={
+          process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as unknown as string
+        }
+        size="invisible"
+        ref={reRef}
+      />
+
+      {emailSent ? <h2>Thanks for your message!</h2> : null}
+
+      {emailError ? <h2>Ooops! There was an error. Please retry.</h2> : null}
+      {loader ? (
+        <Loader message="Sending your message.." />
+      ) : (
+        <Form
+          reRef={reRef}
+          emailError={emailError}
+          emailSent={emailSent}
+          setEmailError={setEmailError}
+          setEmailSent={setEmailSent}
+          loader={loader}
+          setLoader={setLoader}
+        />
+      )}
+    </div>
+  );
+};

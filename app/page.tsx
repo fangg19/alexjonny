@@ -1,6 +1,8 @@
-import About from "./components/About";
-import Experience from "./components/Experience";
-import Hero from "./components/Hero";
+import About from "./components/sections/About";
+import Contact from "./components/sections/Contact";
+import Experience from "./components/sections/Experience";
+import Hero from "./components/sections/Hero";
+import Projects from "./components/sections/Projects";
 
 export default function Home() {
   return (
@@ -9,8 +11,16 @@ export default function Home() {
         <Hero />
         <About />
       </section>
-      <section className="flex flex-col gap-y-16 lg:flex-row items-start justify-between w-full">
+      <section className="flex flex-col gap-y-16 lg:flex-row items-start w-full">
         <Experience />
+      </section>
+
+      <section className="flex flex-col gap-y-16 lg:flex-row items-start w-full">
+        <Projects />
+      </section>
+
+      <section className="flex flex-col gap-y-16 lg:flex-row items-start w-full">
+        <Contact />
       </section>
     </main>
   );

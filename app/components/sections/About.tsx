@@ -4,10 +4,10 @@ import {
   PageVariant,
   HeaderVariant,
   AboutPhoto,
-} from "../animations/animations";
+} from "../../animations/animations";
 
 import React from "react";
-import Button from "./Button";
+import Button from "../Button";
 
 const About = () => {
   const getAge = () => {
