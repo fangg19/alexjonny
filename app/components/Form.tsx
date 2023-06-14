@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
 import Button from "./Button";
-import { useForm } from "react-hook-form";
+import { FieldValues, useForm } from "react-hook-form";
 import axios, { AxiosRequestConfig } from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 import Loader from "./Loader";
@@ -39,28 +39,34 @@ const Form = (props: FormProps) => {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm();
+  } = useForm<FieldValues>();
 
-  const onSubmitForm = async (values) => {
+  const onSubmitForm = async (values: FieldValues) => {
     setLoader(true);
 
-    const token = await reRef?.current.executeAsync();
-    reRef?.current.reset();
-    console.log(token);
+    // const token = await reRef?.current?.executeAsync();
 
-    const config: AxiosRequestConfig = {
-      method: "post",
-      url: `${process.env.NEXT_PUBLIC_API_KEY}`,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      data: { ...values, token },
-    };
+    // reRef?.current.reset();
+
+    // const config: AxiosRequestConfig = {
+    //   method: "post",
+    //   url: "/api/contact",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   data: { ...values, token },
+    // };
 
     try {
-      const response = await axios(config);
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...values }),
+      });
 
-      console.log(response);
+      console.log("config in try ", response);
 
       if (response.status === 200) {
         setLoader(false);
@@ -68,6 +74,10 @@ const Form = (props: FormProps) => {
         setEmailSent(true);
         clearMessage();
         reset();
+      } else {
+        setLoader(false);
+        setEmailError(true);
+        setEmailSent(false);
       }
     } catch (error) {
       console.log(error);
