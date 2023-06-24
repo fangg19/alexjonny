@@ -40,7 +40,7 @@ const ProjectCard = (props: ProjectCardProps) => {
           https://
         </Button>
 
-        <Button type="primary" url={!isPrivate ? githubUrl : undefined}>
+        <Button type="primary" url={!isPrivate ? githubUrl : undefined} isPrivate={isPrivate}>
           {!isPrivate ? "./src" : "isPrivate"}
         </Button>
       </div>

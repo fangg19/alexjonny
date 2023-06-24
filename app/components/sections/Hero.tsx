@@ -9,7 +9,8 @@ const Hero = () => {
       </h1>
       <div className="h-1 bg-neutral-200 w-full" />
       <h1 className="text-4xl text-neutral-200">FRONTEND DEVELOPER</h1>
-      <div className="w-full grayscale">
+      <div className="grayscale relative">
+        {/* <div className="absolute top-0 right-0 w-1/2 h-full bg-neutral-900 z-10 hover:hidden" /> */}
         <Image
           src="/images/me_square.jpg"
           width={200}

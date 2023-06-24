@@ -93,7 +93,7 @@ const Form = (props: FormProps) => {
         <div className="flex flex-col items-start">
           <input
             className={cls(
-              "bg-neutral-950 border border-neutral-700 px-4 py-2 w-full focus:outline-none focus:border-neutral-200",
+              "bg-neutral-900 border border-neutral-700 px-4 py-2 w-full focus:outline-none focus:border-neutral-200",
               errors.name && "border-red-500"
             )}
             type="text"
@@ -113,7 +113,7 @@ const Form = (props: FormProps) => {
         <div className="flex flex-col items-start">
           <input
             className={cls(
-              "bg-neutral-950 border border-neutral-700 px-4 py-2 w-full focus:outline-none focus:border-neutral-200",
+              "bg-neutral-900 border border-neutral-700 px-4 py-2 w-full focus:outline-none focus:border-neutral-200",
               errors.email && "border-red-500"
             )}
             type="email"
@@ -134,7 +134,7 @@ const Form = (props: FormProps) => {
         <div className="flex flex-col items-start">
           <input
             className={cls(
-              "bg-neutral-950 border border-neutral-700 px-4 py-2 w-full focus:outline-none focus:border-neutral-200",
+              "bg-neutral-900 border border-neutral-700 px-4 py-2 w-full focus:outline-none focus:border-neutral-200",
               errors.subject && "border-red-500"
             )}
             type="text"
@@ -152,7 +152,7 @@ const Form = (props: FormProps) => {
         <div className="flex flex-col items-start">
           <textarea
             className={cls(
-              "bg-neutral-950 border border-neutral-700 px-4 py-2 w-full focus:outline-none focus:border-neutral-200",
+              "bg-neutral-900 border border-neutral-700 px-4 py-2 w-full focus:outline-none focus:border-neutral-200",
               errors.message && "border-red-500"
             )}
             placeholder="message"

@@ -7,10 +7,20 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --neutral-200: 229, 229, 229;
-  --neutral-950: 10, 10, 10;
+  --neutral-900: 23, 23, 23;
+
+  /* input:-webkit-autofill,
+  input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+  } */
+
+}
+
+input {
+  color-scheme: light;
 }
 
 body {
   color: rgb(var(--neutral-200));
-  background: rgb(var(--neutral-950));
+  background: rgb(var(--neutral-900));
 }

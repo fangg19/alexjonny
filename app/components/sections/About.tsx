@@ -46,7 +46,7 @@ const About = () => {
         be an adult (ew).
         <br />
       </p>
-      <div className="flex flex-row justify-between items-center mt-10 lg:mt-0">
+      <div className="flex flex-row justify-between items-center mt-10 lg:mt-10">
         <Button type="primary">work</Button>
         <Button type="secondary">.pdf</Button>
       </div>
