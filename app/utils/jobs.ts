@@ -43,7 +43,7 @@ export const jobs: JobType[] = [
     jobTitle: "Frontend Developer",
     content: [
       {
-        title: "UncleBob e-commerce project",
+        title: "UncleBob e-market",
         description: [
           "Developed the components and the interface for the checkout section. Updated and redesigned the existing flow for registered users and built a new flow for guest user",
           "Created the Register and Login pages from scratch",
@@ -59,8 +59,8 @@ export const jobs: JobType[] = [
         ],
       },
     ],
-    company: "BOB",
+    company: "UncleBob",
     period: "sept 2021 - aug 2022",
-    techStack: ["React", "Next.js", "TypeScript", "GraphQL", "SCSS"],
+    techStack: ["React", "Next.js", "REST API", 'Redux', "Redux Toolkit", "SCSS",],
   },
 ];

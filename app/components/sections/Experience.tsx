@@ -22,7 +22,17 @@ const Experience = () => {
                 " flex flex-row relative cursor-pointer"
               )}
             >
-              <div className="h-2 w-4 bg-purple-500 absolute top-2 -left-4" />
+              {job?.id === selectedJob?.id ? (
+
+<div className="h-4 w-4 bg-transparent ring-2 ring-purple-500 absolute top-1 -left-4">
+
+  <div className="h-2 w-2 bg-purple-500 absolute top-1 left-1" />
+
+  </div>
+
+              ) : (
+                <div className="h-4 w-4 bg-transparent ring-2 ring-neutral-200 absolute top-1 -left-4" />
+              )}
 
               <div className="ml-2">
                 <h1>
@@ -38,10 +48,10 @@ const Experience = () => {
       <div className="lg:w-1/2">
         {selectedJob?.content?.map((job, index) => {
           return (
-            <div key={index + 2}>
+            <div key={index + 2} className="mb-6">
               {job?.url ? (
                 <a href={job?.url} target="_blank" referrerPolicy="no-referrer">
-                  <h2 className="font-bold text-lg mb-2 mt-4 underline underline-offset-2">
+                  <h2 className="font-bold text-lg mb-2 underline underline-offset-2">
                     {job.title} &#8599;
                   </h2>
                 </a>

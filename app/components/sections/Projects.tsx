@@ -4,7 +4,7 @@ import ProjectCard from "../ProjectCard";
 
 const Projects = () => {
   return (
-    <div className="w-full flex flex-col lg:flex-row lg:flex-wrap justify-between">
+    <div className="w-full flex flex-col lg:flex-row lg:flex-wrap justify-between gap-4">
       {projects.map((project: ProjectType, index: number) => {
         return (
           <ProjectCard

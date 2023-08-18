@@ -23,7 +23,7 @@ const About = () => {
   };
 
   return (
-    <div className="flex flex-col gap-2 lg:text-xl lg:w-1/2">
+    <div className="flex flex-col gap-2 lg:text-xl lg:w-1/2 text-justify">
       <motion.h2
         key="header"
         initial="hidden"
@@ -36,7 +36,7 @@ const About = () => {
       <p>
         Actually my full name is{" "}
         <strong itemProp="name">Șerban Alexandru Jonny</strong> and I&apos;m a
-        <strong> {getAge()}</strong> years old geeky guy from Bucharest, playing
+        <strong itemProp="age"> {getAge()}</strong> years old guy from Bucharest, Romania playing
         on the web.
         <br />
         <br /> Sitting in front of a screen (they were so bad back then) since I

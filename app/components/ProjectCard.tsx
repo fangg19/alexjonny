@@ -25,7 +25,7 @@ const ProjectCard = (props: ProjectCardProps) => {
   } = props;
 
   return (
-    <div className="flex flex-col lg:w-2/5 w-full my-4">
+    <div className="flex flex-col lg:w-1/2 w-full my-4">
       <div className="flex flex-row gap-2 lg:text-2xl font-bold">
         <span className="underline">00{id}</span>
         <h1>{title} </h1>
