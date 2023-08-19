@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -27,13 +28,12 @@ const Hero = () => {
         >
           {/* <Image src="/icons/github.svg" width={30} height={30} alt="github" /> */}
           <p className="hover:underline underline-offset-2 hover:font-semibold">
-          github
+            github &#128279;
           </p>
         </a>
         {/* <div className="w-[2px] bg-white h-6"/> */}
         {"/"}
         <a
-        
           target="_blank"
           referrerPolicy="no-referrer"
           href="https://www.linkedin.com/in/alexandru-jonny-%C5%9Ferban-977b1014b/"
@@ -45,14 +45,12 @@ const Hero = () => {
             alt="linkedin"
           /> */}
           <p className="hover:underline underline-offset-2 hover:font-semibold">
-
-          linkedin
+            linkedin &#128279;
           </p>
         </a>
 
         {"/"}
         <a
-        
           target="_blank"
           referrerPolicy="no-referrer"
           href="https://www.linkedin.com/in/alexandru-jonny-%C5%9Ferban-977b1014b/"
@@ -64,10 +62,29 @@ const Hero = () => {
             alt="linkedin"
           /> */}
           <p className="hover:underline underline-offset-2 hover:font-semibold">
-
-          resume
+            resume
           </p>
         </a>
+      </div>
+
+      <div className="flex flex-row gap-4 mt-2 justify-center items-center">
+        <Link href="#about">
+          <p className="hover:bg-neutral-200 hover:text-neutral-900 hover:font-semibold">
+            about
+          </p>
+        </Link>
+        {"/"}
+        <Link href="#work">
+          <p className="hover:bg-neutral-200 hover:text-neutral-900 hover:font-semibold">
+            work
+          </p>
+        </Link>
+        {"/"}
+        <Link href="#contact">
+          <p className="hover:bg-neutral-200 hover:text-neutral-900 hover:font-semibold">
+            contact
+          </p>
+        </Link>
       </div>
     </div>
   );
