@@ -15,7 +15,7 @@ interface ButtonProps {
 const Button = (props: ButtonProps) => {
   const { type, children, onClick, url, className, isPrivate } = props;
   return (
-    <div>
+    <div className={className}>
       {url ? (
         <Link href={url} target="_blank" referrerPolicy="no-referrer">
           <button
@@ -24,7 +24,6 @@ const Button = (props: ButtonProps) => {
               type === "primary"
                 ? "border-neutral-200 border-2 bg-transparent text-neutral-200"
                 : "border-neutral-200 border-2 bg-neutral-200 text-neutral-900",
-              className,
               isPrivate && "opacity-40",
               "hover:bg-purple-500 hover:text-neutral-200"
             )}
@@ -39,9 +38,9 @@ const Button = (props: ButtonProps) => {
             "px-8 py-2",
             type === "primary"
               ? "border-neutral-200 border-2 bg-transparent text-neutral-200"
-              : "bg-neutral-200 text-neutral-900",
-            className,
-            isPrivate && "opacity-40"
+              : "border-neutral-200 border-2 bg-neutral-200 text-neutral-900",
+            isPrivate && "opacity-40",
+            "hover:bg-purple-500 hover:text-neutral-200"
           )}
           onClick={onClick}
         >

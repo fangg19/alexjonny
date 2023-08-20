@@ -8,3 +8,12 @@ export function cls(...args: any[]): string {
   }
   return s.substr(1);
 }
+
+export function scrollToElement(elementId: string) {
+  if (!elementId) return;
+  const elementToSCroll = document.getElementById(elementId);
+  window.scrollTo({
+    top: elementToSCroll ? elementToSCroll.offsetTop - 140 : 0,
+    behavior: "smooth",
+  });
+}

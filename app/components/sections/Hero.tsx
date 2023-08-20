@@ -1,8 +1,14 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { scrollToElement } from "@/app/utils/utils";
 
 const Hero = () => {
+  function handleScroll(elementId: string) {
+    scrollToElement(elementId);
+  }
+
   return (
     <div className="flex flex-col items-start gap-1 min-h-screen">
       <h1 className="lg:text-6xl text-3xl font-bold text-neutral-200">
@@ -20,69 +26,60 @@ const Hero = () => {
           priority
         /> */}
       </div>
+
+      <div className="flex flex-row gap-4 mt-4 justify-center items-center">
+        <p
+          className="hover:bg-neutral-200 hover:text-neutral-900 hover:font-semibold cursor-pointer"
+          onClick={() => handleScroll("about")}
+        >
+          about
+        </p>
+        {"/"}
+        <p
+          className="hover:bg-neutral-200 hover:text-neutral-900 hover:font-semibold cursor-pointer"
+          onClick={() => handleScroll("work")}
+        >
+          work
+        </p>
+        {"/"}
+        <p
+          className="hover:bg-neutral-200 hover:text-neutral-900 hover:font-semibold cursor-pointer"
+          onClick={() => handleScroll("contact")}
+        >
+          contact
+        </p>
+      </div>
+
       <div className="flex flex-row gap-4 mt-2 justify-center items-center">
-        <a
+        <Link
+          href="https://github.com/fangg19"
           target="_blank"
           referrerPolicy="no-referrer"
-          href="https://github.com/fangg19"
         >
           {/* <Image src="/icons/github.svg" width={30} height={30} alt="github" /> */}
           <p className="hover:underline underline-offset-2 hover:font-semibold">
             github &#128279;
           </p>
-        </a>
+        </Link>
         {/* <div className="w-[2px] bg-white h-6"/> */}
         {"/"}
-        <a
+        <Link
+          href="https://www.linkedin.com/in/alexandru-jonny-%C5%9Ferban-977b1014b/"
           target="_blank"
           referrerPolicy="no-referrer"
-          href="https://www.linkedin.com/in/alexandru-jonny-%C5%9Ferban-977b1014b/"
         >
-          {/* <Image
-            src="/icons/linkedin.svg"
-            width={30}
-            height={30}
-            alt="linkedin"
-          /> */}
           <p className="hover:underline underline-offset-2 hover:font-semibold">
             linkedin &#128279;
           </p>
-        </a>
-
+        </Link>
         {"/"}
-        <a
+        <Link
           target="_blank"
           referrerPolicy="no-referrer"
           href="https://www.linkedin.com/in/alexandru-jonny-%C5%9Ferban-977b1014b/"
         >
-          {/* <Image
-            src="/icons/linkedin.svg"
-            width={30}
-            height={30}
-            alt="linkedin"
-          /> */}
           <p className="hover:underline underline-offset-2 hover:font-semibold">
             resume
-          </p>
-        </a>
-      </div>
-
-      <div className="flex flex-row gap-4 mt-2 justify-center items-center">
-        <Link href="#about">
-          <p className="hover:bg-neutral-200 hover:text-neutral-900 hover:font-semibold">
-            about
-          </p>
-        </Link>
-        {"/"}
-        <Link href="#work">
-          <p className="hover:bg-neutral-200 hover:text-neutral-900 hover:font-semibold">
-            work
-          </p>
-        </Link>
-        {"/"}
-        <Link href="#contact">
-          <p className="hover:bg-neutral-200 hover:text-neutral-900 hover:font-semibold">
-            contact
           </p>
         </Link>
       </div>

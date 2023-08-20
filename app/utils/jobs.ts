@@ -7,7 +7,11 @@ export interface JobType {
     url?: string;
   }[];
   company: string;
+  companyDescription: string;
   period: string;
+  startDate: Date;
+  endDate: Date;
+  stillWorking: boolean;
   techStack: string[];
 }
 
@@ -34,9 +38,21 @@ export const jobs: JobType[] = [
       },
     ],
     company: "Sessions",
-
+    companyDescription:
+      "Sessions is a video conferencing platform that allows users to create and host video conferences, webinars and workshops.",
     period: "sept 2022 - present",
-    techStack: ["React", "Next.js", "TypeScript", "GraphQL", "SCSS"],
+    startDate: new Date("2022-10-05"),
+    endDate: new Date(),
+    stillWorking: true,
+    techStack: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "GraphQL",
+      "Node.js",
+      "Prisma",
+      "SCSS",
+    ],
   },
   {
     id: 2,
@@ -60,7 +76,19 @@ export const jobs: JobType[] = [
       },
     ],
     company: "UncleBob",
+    companyDescription:
+      "UncleBob is a Romanian start-up that sells a wide range of products, from electronics to home appliances and furniture.",
     period: "sept 2021 - aug 2022",
-    techStack: ["React", "Next.js", "REST API", 'Redux', "Redux Toolkit", "SCSS",],
+    startDate: new Date("2021-09-18"),
+    endDate: new Date("2022-08-18"),
+    stillWorking: false,
+    techStack: [
+      "React",
+      "Next.js",
+      "REST API",
+      "Redux",
+      "Redux Toolkit",
+      "SCSS",
+    ],
   },
 ];
