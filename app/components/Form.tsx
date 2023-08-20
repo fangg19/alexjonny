@@ -169,7 +169,7 @@ const Form = (props: FormProps) => {
 
         <div className="self-end">
           <Button type="secondary" onClick={handleSubmit(onSubmitForm)}>
-            sendMessage()
+            send message
           </Button>
         </div>
       </form>

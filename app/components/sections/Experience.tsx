@@ -63,26 +63,31 @@ const Experience = () => {
                   <div className="h-4 w-4 bg-transparent ring-2 ring-neutral-200 relative" />
                 )}
 
-                <div className="ml-4">
-                  <h1>
-                    {job.jobTitle} @{job.company} &mdash;{" "}
-                    {getDaysCount(job.startDate, job.endDate, job.stillWorking)}
+                <div className="ml-4 flex flex-row gap-2 items-center">
+                  <h1 className="text-lg font-semibold">
+                    {job.jobTitle} @{job.company}
                   </h1>
+                  &mdash;
+                  <p>
+                    {getDaysCount(job.startDate, job.endDate, job.stillWorking)}
+                  </p>
                   <p>{/* {getPeriod(job.startDate, job.endDate)}{" "} */}</p>
                 </div>
               </div>
 
               {job?.id === selectedJob?.id ? (
                 <>
-                  <motion.p
-                    className="text-sm mt-2"
+                  <motion.div
+                    className="text-sm mt-2 flex flex-col gap-2"
                     key="header"
                     initial="hidden"
                     animate="visible"
                     variants={HeaderVariant}
                   >
-                    {selectedJob?.companyDescription}
-                  </motion.p>
+                    {selectedJob?.companyDescription.map((text, index) => {
+                      return <p key={index}>{text}</p>;
+                    })}
+                  </motion.div>
                   <div className="flex flex-row gap-4 mt-2">
                     {selectedJob?.techStack.map((tech, index) => {
                       return (

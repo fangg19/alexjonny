@@ -10,7 +10,7 @@ import React from "react";
 import Button from "../Button";
 
 const About = () => {
-  const getAge = () => {
+  const getAge = (): number => {
     let age;
     const yearOfBirth = new Date("13 Nov, 1994").getFullYear();
     const currentDate = new Date();
@@ -27,17 +27,18 @@ const About = () => {
       id="about"
       className="flex flex-col gap-2 lg:text-xl text-justify relative"
     >
+      <div className="w-full h-[2px] bg-neutral-800 mb-12" />
       {/* <h1 className="absolute font-extrabold -ml-40 -mt-14 text-neutral-800 text-9xl">
         WHO AM I ?
       </h1> */}
-      <div className=" lg:w-1/2 z-10 flex flex-col">
+      <div className=" z-10 flex flex-col">
         <motion.h2
           key="header"
           initial="hidden"
           animate="visible"
           variants={HeaderVariant}
         >
-          Hi, I&apos;m Jonny <span>🖐</span>
+          Hi, I&apos;m Jonny
         </motion.h2>
         <p>
           <s>(or Alex, I&apos;m fine with any)</s>
@@ -50,26 +51,20 @@ const About = () => {
           <br />
           <br />
           I got my hands on a computer back in the early 2000s and I&apos;ve
-          been playing with it ever since.
-          <br /> Sitting in front of a screen for so much (I really need to get
-          my eyes checked), I developed a close relationship with the digital
-          and the web, making it my playground. After a break of few years I
-          decided to come back and make it the main activity of my everyday
-          life.
+          been playing with it ever since and I developed a close relationship
+          with the digital and the web, making it my playground. After a break
+          of few years I decided to come back and make it the main activity of
+          my everyday life.
           <br />
           <br />
-          I&apos;m a relaxed person who leans towards simplicity and
+          I&apos;m a curious and relaxed person who leans towards simplicity and
           practicality, often guided by the question,{" "}
           <strong>&quot;is it really necessary?&quot;</strong>. I enjoy a good
-          sense of humor and am consistently prepared for a hearty laugh.
+          sense of humor and am consistently prepared for a hearty laugh. I
+          appreciate beautiful things whether they are digital or not.
         </p>
-        <div className="flex flex-row items-center mt-10 lg:mt-10 w-full">
-          {/* <Button type="primary">work</Button> */}
-          <div className="ml-auto">
-            <Button type="secondary">.pdf</Button>
-          </div>
-        </div>
       </div>
+      <div className="w-full h-[2px] bg-neutral-800 mt-12" />
     </div>
   );
 };

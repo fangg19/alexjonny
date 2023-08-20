@@ -10,7 +10,7 @@ const Hero = () => {
   }
 
   return (
-    <div className="flex flex-col items-start gap-1 min-h-screen">
+    <div id="home" className="flex flex-col items-start gap-1 min-h-screen">
       <h1 className="lg:text-6xl text-3xl font-bold text-neutral-200">
         ALEX JONNY
       </h1>
@@ -58,7 +58,7 @@ const Hero = () => {
         >
           {/* <Image src="/icons/github.svg" width={30} height={30} alt="github" /> */}
           <p className="hover:underline underline-offset-2 hover:font-semibold">
-            github &#128279;
+            github
           </p>
         </Link>
         {/* <div className="w-[2px] bg-white h-6"/> */}
@@ -69,7 +69,7 @@ const Hero = () => {
           referrerPolicy="no-referrer"
         >
           <p className="hover:underline underline-offset-2 hover:font-semibold">
-            linkedin &#128279;
+            linkedin
           </p>
         </Link>
         {"/"}

@@ -7,7 +7,7 @@ export interface JobType {
     url?: string;
   }[];
   company: string;
-  companyDescription: string;
+  companyDescription: string[];
   period: string;
   startDate: Date;
   endDate: Date;
@@ -23,7 +23,7 @@ export const jobs: JobType[] = [
       {
         title: "Sessions - Video Conferencing Platform",
         description: [
-          "Developed the components and the interface for the checkout section. Updated and redesigned the existing flow for registered users and built a new flow for guest user",
+          "Developed multiple components and the interface for the various sections of the app.",
           "Created the Register and Login pages from scratch",
         ],
         url: "https://sessions.us/",
@@ -38,8 +38,10 @@ export const jobs: JobType[] = [
       },
     ],
     company: "Sessions",
-    companyDescription:
-      "Sessions is a video conferencing platform that allows users to create and host video conferences, webinars and workshops.",
+    companyDescription: [
+      "Sessions is a videoconferencing app suited for webinars, workshops and demos.",
+      "A fast growing startup with over 12.000 active users, Sessions strives to be a better choice in reaching people by providing the required set of tools in one place.",
+    ],
     period: "sept 2022 - present",
     startDate: new Date("2022-10-05"),
     endDate: new Date(),
@@ -76,8 +78,9 @@ export const jobs: JobType[] = [
       },
     ],
     company: "UncleBob",
-    companyDescription:
+    companyDescription: [
       "UncleBob is a Romanian start-up that sells a wide range of products, from electronics to home appliances and furniture.",
+    ],
     period: "sept 2021 - aug 2022",
     startDate: new Date("2021-09-18"),
     endDate: new Date("2022-08-18"),
