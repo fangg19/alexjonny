@@ -77,22 +77,22 @@ const Experience = () => {
 
               {job?.id === selectedJob?.id ? (
                 <>
-                  <motion.div
-                    className="text-sm mt-2 flex flex-col gap-2"
-                    key="header"
-                    initial="hidden"
-                    animate="visible"
-                    variants={HeaderVariant}
-                  >
+                  <div className="text-sm mt-2 flex flex-col gap-2">
                     {selectedJob?.companyDescription.map((text, index) => {
                       return <p key={index}>{text}</p>;
                     })}
-                  </motion.div>
-                  <div className="flex flex-row gap-4 mt-2">
+                  </div>
+                  <div className="flex flex-row gap-x-4 mt-2 flex-wrap">
                     {selectedJob?.techStack.map((tech, index) => {
                       return (
-                        <div key={index}>
-                          <p className="text-xs">{tech}</p>
+                        <div
+                          key={index}
+                          className="flex flex-row items-center gap-2"
+                        >
+                          <p className="text-xs">[{tech}]</p>{" "}
+                          {index + 1 !== selectedJob?.techStack.length && (
+                            <span>&#8226;</span>
+                          )}
                         </div>
                       );
                     })}
