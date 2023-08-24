@@ -167,8 +167,12 @@ const Form = (props: FormProps) => {
           )}
         </div>
 
-        <div className="self-end">
-          <Button type="secondary" onClick={handleSubmit(onSubmitForm)}>
+        <div className="self-end w-full">
+          <Button
+            type="secondary"
+            onClick={handleSubmit(onSubmitForm)}
+            className="w-full lg:w-auto"
+          >
             send message
           </Button>
         </div>

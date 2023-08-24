@@ -4,10 +4,10 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="flex flex-col lg:flex-row w-full flex-wrap lg:flex-nowrap mb-12"
+      className="flex flex-col lg:flex-row w-full flex-wrap lg:flex-nowrap mb-12 gap-y-10"
     >
       <div className="flex flex-col gap-8 w-full lg:w-1/2 text-justify lg:pr-12">
-        <h2 className="text-lg lg:text-3xl font-bold">
+        <h2 className="text-xl lg:text-3xl font-bold">
           Let&apos;s talk about it.
         </h2>
 
