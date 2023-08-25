@@ -167,11 +167,11 @@ const Form = (props: FormProps) => {
           )}
         </div>
 
-        <div className="self-end w-full">
+        <div className="flex items-end w-full">
           <Button
             type="secondary"
             onClick={handleSubmit(onSubmitForm)}
-            className="w-full lg:w-auto"
+            className="w-full lg:w-auto lg:ml-auto"
           >
             send message
           </Button>

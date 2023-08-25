@@ -2,6 +2,7 @@ import React from "react";
 import { JobType } from "../utils/jobs";
 import { cls } from "../utils/utils";
 import FakeCheckbox from "./FakeCheckbox";
+import JobDetails from "./JobDetails";
 
 type JobItemProps = {
   job: JobType;
@@ -11,6 +12,8 @@ type JobItemProps = {
 
 const JobItem = (props: JobItemProps) => {
   const { job, selectedJob, handleSelectJob } = props;
+
+  const isSelected = selectedJob.id === job.id;
 
   const getDaysCount = (
     startDate: Date,
@@ -28,22 +31,23 @@ const JobItem = (props: JobItemProps) => {
       <div
         onClick={() => handleSelectJob(job)}
         className={cls(
-          selectedJob.id !== job.id && "opacity-20",
-          " flex flex-row relative cursor-pointer items-center"
+          !isSelected && "opacity-20 cursor-pointer",
+          "flex flex-row relative items-center w-fit"
         )}
       >
-        <FakeCheckbox isEmpty={selectedJob.id !== job.id} />
-
+        <FakeCheckbox isEmpty={!isSelected} />
         <div className="ml-4 flex flex-row gap-2 items-center">
           <h1 className="text-lg font-semibold">
             {job.jobTitle} @{job.company}
           </h1>
           &mdash;
-          <p>{getDaysCount(job.startDate, job.endDate, job.stillWorking)}</p>
+          <p className="flex-wrap">
+            {getDaysCount(job.startDate, job.endDate, job.stillWorking)}
+          </p>
         </div>
       </div>
 
-      {job?.id === selectedJob?.id ? (
+      {isSelected ? (
         <>
           <div className="text-sm mt-2 flex flex-col gap-2">
             {selectedJob?.companyDescription.map((text, index) => {
@@ -64,6 +68,18 @@ const JobItem = (props: JobItemProps) => {
           </div>
         </>
       ) : null}
+
+      {isSelected && (
+        <div className="lg:w-1/2  lg:hidden mt-4">
+          {selectedJob?.content?.map((job, index) => {
+            return (
+              <div key={index + 2} className="mb-6">
+                <JobDetails job={job} />
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };
