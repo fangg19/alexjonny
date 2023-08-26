@@ -4,6 +4,7 @@ import "./globals.css";
 import { Roboto_Mono } from "next/font/google";
 import { Ubuntu_Mono } from "next/font/google";
 import { cls } from "./utils/utils";
+import classes from "./components/styles/CustomCursor.module.scss";
 
 const robotoMono = Roboto_Mono({ subsets: ["latin"] });
 const ubuntuMono = Ubuntu_Mono({ weight: "400", subsets: ["latin"] });
@@ -21,6 +22,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cls("px-4 md:px-20", robotoMono.className)}>
+        <div className={classes.innerCursor} />
+        <div className={classes.outerCursor} />
         <Navbar />
         {children}
         {/* <Footer /> */}

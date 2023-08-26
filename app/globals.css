@@ -9,15 +9,10 @@
   --neutral-200: 229, 229, 229;
   --neutral-900: 23, 23, 23;
   --purple-500: 168, 85, 247;
-  /* input:-webkit-autofill,
-  input:-webkit-autofill:focus {
-    transition: background-color 600000s 0s, color 600000s 0s;
-  } */
-
 }
 
 input {
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 body {

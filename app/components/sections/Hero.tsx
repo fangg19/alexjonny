@@ -2,7 +2,13 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { scrollToElement } from "@/app/utils/utils";
+import {
+  EXTERNAL_NAV_LINKS,
+  INTERNAL_NAV_LINKS,
+  cls,
+  scrollToElement,
+} from "@/app/utils/utils";
+import classes from "../styles/NavItem.module.scss";
 
 const Hero = () => {
   function handleScroll(elementId: string) {
@@ -27,62 +33,50 @@ const Hero = () => {
         /> */}
       </div>
 
-      <div className="flex flex-row gap-4 mt-4 justify-center items-center">
-        <p
-          className="hover:bg-neutral-200 hover:text-neutral-900 hover:font-semibold cursor-pointer"
-          onClick={() => handleScroll("about")}
-        >
-          about
-        </p>
-        {"/"}
-        <p
-          className="hover:bg-neutral-200 hover:text-neutral-900 hover:font-semibold cursor-pointer"
-          onClick={() => handleScroll("work")}
-        >
-          work
-        </p>
-        {"/"}
-        <p
-          className="hover:bg-neutral-200 hover:text-neutral-900 hover:font-semibold cursor-pointer"
-          onClick={() => handleScroll("contact")}
-        >
-          contact
-        </p>
-      </div>
+      <nav className="flex flex-row mt-4 justify-center items-center">
+        {INTERNAL_NAV_LINKS.map((link, index) => {
+          return (
+            <div key={index} className={cls("flex flex-row items-center")}>
+              <div
+                className={cls(
+                  "hover:font-semibold cursor-pointer",
+                  classes.NavItemWrapper,
+                  classes.NavItem
+                )}
+                onClick={() => handleScroll(link.name)}
+              >
+                <span className={cls(classes.Button__inner)}>{link.name}</span>
+              </div>
+              {index !== INTERNAL_NAV_LINKS.length - 1 && (
+                <span className="mx-3">/</span>
+              )}
+            </div>
+          );
+        })}
+      </nav>
 
-      <div className="flex flex-row gap-4 mt-2 justify-center items-center">
-        <Link
-          href="https://github.com/fangg19"
-          target="_blank"
-          referrerPolicy="no-referrer"
-        >
-          {/* <Image src="/icons/github.svg" width={30} height={30} alt="github" /> */}
-          <p className="hover:underline underline-offset-2 hover:font-semibold">
-            github
-          </p>
-        </Link>
-        {/* <div className="w-[2px] bg-white h-6"/> */}
-        {"/"}
-        <Link
-          href="https://www.linkedin.com/in/alexandru-jonny-%C5%9Ferban-977b1014b/"
-          target="_blank"
-          referrerPolicy="no-referrer"
-        >
-          <p className="hover:underline underline-offset-2 hover:font-semibold">
-            linkedin
-          </p>
-        </Link>
-        {"/"}
-        <Link
-          target="_blank"
-          referrerPolicy="no-referrer"
-          href="https://www.linkedin.com/in/alexandru-jonny-%C5%9Ferban-977b1014b/"
-        >
-          <p className="hover:underline underline-offset-2 hover:font-semibold">
-            resume
-          </p>
-        </Link>
-      </div>
+      <nav className="flex flex-row mt-2 justify-center items-center">
+        {EXTERNAL_NAV_LINKS.map((link, index) => {
+          return (
+            <div key={index} className="flex flex-row items-center">
+              <div className="flex flex-row items-center">
+                <Link
+                  href={link.url}
+                  target="_blank"
+                  referrerPolicy="no-referrer"
+                >
+                  <p className="underline underline-offset-2 hover:font-semibold decoration-transparent transition duration-300 ease-in-out hover:decoration-inherit">
+                    {link.name}
+                  </p>
+                </Link>
+              </div>
+              {index !== EXTERNAL_NAV_LINKS.length - 1 && (
+                <span className="mx-3">/</span>
+              )}
+            </div>
+          );
+        })}
+      </nav>
     </div>
   );
 };

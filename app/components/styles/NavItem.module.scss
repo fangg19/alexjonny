@@ -1,0 +1,68 @@
+.NavItemWrapper {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-thickness: 0.05em;
+  text-underline-offset: 0.25em;
+}
+.NavItem {
+  //   font-family: "Segoe UI", sans-serif;
+  //   font-weight: 600;
+  //   line-height: 130%;
+  //   letter-spacing: -0.02em;
+  color: rgb(var(--neutral-200));
+  //   font-size: 20px;
+  position: relative;
+  //   border-radius: 80em;
+  background-color: transparent;
+  //   border: 0.125rem solid #11190c;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+    color 0.2s ease, fill 0.2s ease, transform 0.2s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+  will-change: transform;
+  display: inline-block;
+  //   margin-top: clamp(1px, 5.3333333333vw, 40.96px);
+}
+.NavItem:hover {
+  background-color: rgb(var(--neutral-200));
+  //   border-color: #e6ff00;
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+    color 0.2s ease, fill 0.2s ease, transform 0.2s ease-in-out;
+  //   transform: scale(1.07);
+  will-change: transform;
+  color: rgb(var(--neutral-900));
+}
+.NavItem:after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-100%) rotate(10deg);
+  transform-origin: top left;
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+    color 0.2s ease, fill 0.2s ease, transform 0.2s ease-in-out;
+  will-change: transform;
+  z-index: -1;
+  border-radius: 80em;
+  background-color: rgb(var(--neutral-200));
+}
+
+.NavItem:hover:after {
+  transform: translate(0);
+  z-index: 0;
+}
+.NavItem > * {
+  position: relative;
+  z-index: 1;
+}
+.NavItem__inner {
+  color: rgb(var(--neutral-900));
+}
+.NavItem:hover .NavItem__inner {
+  color: rgb(var(--neutral-200));
+}
