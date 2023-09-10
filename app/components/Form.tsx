@@ -2,31 +2,18 @@
 import React, { useState, useRef } from "react";
 import Button from "./Button";
 import { FieldValues, useForm } from "react-hook-form";
-import axios, { AxiosRequestConfig } from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 import Loader from "./Loader";
 import { cls } from "../utils/utils";
 
 interface FormProps {
-  emailSent: boolean;
   setEmailSent: React.Dispatch<React.SetStateAction<boolean>>;
-  emailError: boolean;
   setEmailError: React.Dispatch<React.SetStateAction<boolean>>;
-  loader: boolean;
   setLoader: React.Dispatch<React.SetStateAction<boolean>>;
-  reRef: React.MutableRefObject<ReCAPTCHA>;
 }
 
 const Form = (props: FormProps) => {
-  const {
-    emailSent,
-    setEmailSent,
-    emailError,
-    setEmailError,
-    loader,
-    setLoader,
-    reRef,
-  } = props;
+  const { setEmailSent, setEmailError, setLoader } = props;
 
   const clearMessage = () => {
     setTimeout(() => {
@@ -44,19 +31,6 @@ const Form = (props: FormProps) => {
   const onSubmitForm = async (values: FieldValues) => {
     setLoader(true);
 
-    // const token = await reRef?.current?.executeAsync();
-
-    // reRef?.current.reset();
-
-    // const config: AxiosRequestConfig = {
-    //   method: "post",
-    //   url: "/api/contact",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   data: { ...values, token },
-    // };
-
     try {
       const response = await fetch("/api/send", {
         method: "POST",
@@ -65,8 +39,6 @@ const Form = (props: FormProps) => {
         },
         body: JSON.stringify({ ...values }),
       });
-
-      console.log("config in try ", response);
 
       if (response.status === 200) {
         setLoader(false);
@@ -197,20 +169,19 @@ const ContactForm = () => {
         size="invisible"
         ref={reRef}
       /> */}
-
-      {emailSent ? <h2>Thanks for your message!</h2> : null}
-
+      <div className="w-full h-full flex flex-col items-center justify-center">
+        {emailSent ? <h2>Thanks for your message!</h2> : null}
+      </div>
       {emailError ? <h2>Ooops! There was an error. Please retry.</h2> : null}
       {loader ? (
-        <Loader message="Sending your message.." />
+        <div className="w-full h-full flex flex-col items-center justify-center">
+          <Loader />
+          <h3>Sending your message...</h3>
+        </div>
       ) : (
         <Form
-          reRef={reRef}
-          emailError={emailError}
-          emailSent={emailSent}
           setEmailError={setEmailError}
           setEmailSent={setEmailSent}
-          loader={loader}
           setLoader={setLoader}
         />
       )}

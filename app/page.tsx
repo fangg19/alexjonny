@@ -8,7 +8,7 @@ import Projects from "./components/sections/Projects";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center gap-y-8 lg:gap-y-48  2xl:px-32">
-      <section className="flex flex-col gap-y-16  lg:flex-row items-start justify-between w-full mt-12 lg:mt-36">
+      <section className="flex flex-col gap-y-16  lg:flex-row items-start justify-between w-full pt-12 lg:pt-36">
         <Hero />
         {/* <About /> */}
         {/* <Blobs /> */}

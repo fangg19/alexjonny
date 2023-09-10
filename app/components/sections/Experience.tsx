@@ -13,9 +13,13 @@ import JobItem from "../JobItem";
 import JobDetails from "../JobDetails";
 
 const Experience = () => {
-  const [selectedJob, setSelectedJob] = useState<JobType>(jobs[0]);
+  const [selectedJob, setSelectedJob] = useState<JobType | null>(null);
 
   const handleSelectJob = (job: JobType) => {
+    if (selectedJob?.id === job.id) {
+      setSelectedJob(null);
+      return;
+    }
     setSelectedJob(job);
   };
 

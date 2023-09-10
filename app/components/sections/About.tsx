@@ -6,9 +6,6 @@ import {
   AboutPhoto,
 } from "../../animations/animations";
 
-import React from "react";
-import Button from "../Button";
-
 const About = () => {
   const getAge = (): number => {
     let age;
@@ -27,16 +24,16 @@ const About = () => {
       id="about"
       className="flex flex-col gap-2 lg:text-xl text-justify relative"
     >
-      <div className="w-full h-[2px] bg-yellow-500 mb-12" />
+      <div className="w-full h-[2px] bg-neutral-800 mb-12" />
       {/* <h1 className="absolute font-extrabold -ml-40 -mt-14 text-neutral-800 text-9xl">
         WHO AM I ?
       </h1> */}
-      <div className=" z-10 flex flex-col">
+      <div className="z-10 flex flex-col">
         <motion.h2
           key="header"
-          initial="hidden"
-          animate="visible"
-          variants={HeaderVariant}
+          // initial="hidden"
+          // animate="visible"
+          // variants={HeaderVariant}
         >
           Hi, I&apos;m Jonny
         </motion.h2>
@@ -64,7 +61,7 @@ const About = () => {
           appreciate beautiful things whether they are digital or not.
         </p>
       </div>
-      <div className="w-full h-[2px] bg-yellow-500 mt-12" />
+      <div className="w-full h-[2px] bg-neutral-800 mt-12" />
     </div>
   );
 };

@@ -6,14 +6,14 @@ import JobDetails from "./JobDetails";
 
 type JobItemProps = {
   job: JobType;
-  selectedJob: JobType;
+  selectedJob: JobType | null;
   handleSelectJob: (job: JobType) => void;
 };
 
 const JobItem = (props: JobItemProps) => {
   const { job, selectedJob, handleSelectJob } = props;
 
-  const isSelected = selectedJob.id === job.id;
+  const isSelected = selectedJob?.id === job?.id;
 
   const getDaysCount = (
     startDate: Date,

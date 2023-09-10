@@ -1,10 +1,9 @@
 interface LoaderProps {
-  message: string;
+  message?: string;
 }
 
 const Loader = (props: LoaderProps) => {
-  const { message } = props;
-  return <div>{message}</div>;
+  return <div className="w-8 h-8 bg-purple-500 rounded-full animate-bounce" />;
 };
 
 export default Loader;
