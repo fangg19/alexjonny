@@ -44,3 +44,17 @@ export const EXTERNAL_NAV_LINKS = [
     url: "https://www.linkedin.com/in/alexandru-jonny-%C5%9Ferban-977b1014b/",
   },
 ];
+
+const randomColors: string[] = [
+  "red-500",
+  "yellow-500",
+  "green-500",
+  "blue-500",
+  "indigo-500",
+  "purple-500",
+  "pink-500",
+];
+
+export function getRandomColor(): string {
+  return randomColors[Math.floor(Math.random() * randomColors.length)];
+}

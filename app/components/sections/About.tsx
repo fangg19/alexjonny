@@ -27,7 +27,7 @@ const About = () => {
       id="about"
       className="flex flex-col gap-2 lg:text-xl text-justify relative"
     >
-      <div className="w-full h-[2px] bg-neutral-800 mb-12" />
+      <div className="w-full h-[2px] bg-yellow-500 mb-12" />
       {/* <h1 className="absolute font-extrabold -ml-40 -mt-14 text-neutral-800 text-9xl">
         WHO AM I ?
       </h1> */}
@@ -64,7 +64,7 @@ const About = () => {
           appreciate beautiful things whether they are digital or not.
         </p>
       </div>
-      <div className="w-full h-[2px] bg-neutral-800 mt-12" />
+      <div className="w-full h-[2px] bg-yellow-500 mt-12" />
     </div>
   );
 };

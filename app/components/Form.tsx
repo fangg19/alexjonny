@@ -190,13 +190,13 @@ const ContactForm = () => {
 
   return (
     <div className="flex flex-col w-full lg:w-1/2">
-      <ReCAPTCHA
+      {/* <ReCAPTCHA
         sitekey={
           process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as unknown as string
         }
         size="invisible"
         ref={reRef}
-      />
+      /> */}
 
       {emailSent ? <h2>Thanks for your message!</h2> : null}
 

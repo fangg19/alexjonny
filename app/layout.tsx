@@ -22,8 +22,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cls("px-4 md:px-20", robotoMono.className)}>
-        <div className={classes.innerCursor} />
-        <div className={classes.outerCursor} />
         <Navbar />
         {children}
         {/* <Footer /> */}

@@ -9,6 +9,7 @@ import {
   scrollToElement,
 } from "@/app/utils/utils";
 import classes from "../styles/NavItem.module.scss";
+import Blobs from "../Blobs";
 
 const Hero = () => {
   function handleScroll(elementId: string) {
@@ -33,26 +34,30 @@ const Hero = () => {
         /> */}
       </div>
 
-      <nav className="flex flex-row mt-4 justify-center items-center">
-        {INTERNAL_NAV_LINKS.map((link, index) => {
-          return (
-            <div key={index} className={cls("flex flex-row items-center")}>
-              <div
-                className={cls(
-                  "hover:font-semibold cursor-pointer",
-                  classes.NavItemWrapper,
-                  classes.NavItem
+      <nav className="mt-4">
+        <ul className="flex flex-row justify-center items-center">
+          {INTERNAL_NAV_LINKS.map((link, index) => {
+            return (
+              <li key={index} className={cls("flex flex-row items-center")}>
+                <div
+                  className={cls(
+                    "hover:font-semibold cursor-pointer",
+                    classes.NavItemWrapper,
+                    classes.NavItem
+                  )}
+                  onClick={() => handleScroll(link.name)}
+                >
+                  <span className={cls(classes.Button__inner)}>
+                    {link.name}
+                  </span>
+                </div>
+                {index !== INTERNAL_NAV_LINKS.length - 1 && (
+                  <span className="mx-3">/</span>
                 )}
-                onClick={() => handleScroll(link.name)}
-              >
-                <span className={cls(classes.Button__inner)}>{link.name}</span>
-              </div>
-              {index !== INTERNAL_NAV_LINKS.length - 1 && (
-                <span className="mx-3">/</span>
-              )}
-            </div>
-          );
-        })}
+              </li>
+            );
+          })}
+        </ul>
       </nav>
 
       <nav className="flex flex-row mt-2 justify-center items-center">

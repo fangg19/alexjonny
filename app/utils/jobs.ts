@@ -40,7 +40,7 @@ export const jobs: JobType[] = [
     company: "Sessions",
     companyDescription: [
       "Sessions is a videoconferencing app suited for webinars, workshops and demos.",
-      "A fast growing startup with over 12.000 active users, Sessions strives to be a better choice in reaching people by providing the required set of tools in one place.",
+      "A fast growing startup with over 22.000 active users and growing daily, Sessions strives to be a better choice in reaching people by providing the required set of tools in one place.",
       "I have a role in developing the web app, maintaining the codebase and implementing new features.",
     ],
     period: "sept 2022 - present",

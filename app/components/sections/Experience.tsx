@@ -2,7 +2,11 @@
 import { useState } from "react";
 import { JobType, jobs } from "../../utils/jobs";
 import { cls } from "../../utils/utils";
-import { HeaderVariant } from "@/app/animations/animations";
+import {
+  HeaderVariant,
+  StaggerContainer,
+  StaggerItem,
+} from "@/app/animations/animations";
 import { motion } from "framer-motion";
 import FakeCheckbox from "../FakeCheckbox";
 import JobItem from "../JobItem";
@@ -30,15 +34,25 @@ const Experience = () => {
         })}
       </div>
 
-      <div className="lg:w-1/2 hidden lg:block">
+      <motion.div
+        variants={StaggerContainer}
+        initial="hidden"
+        animate="visible"
+        className="lg:w-1/2 hidden lg:block"
+        key={selectedJob?.id}
+      >
         {selectedJob?.content?.map((job, index) => {
           return (
-            <div key={index + 2} className="mb-6">
+            <motion.div
+              variants={StaggerItem}
+              key={job?.title}
+              className="mb-6"
+            >
               <JobDetails job={job} />
-            </div>
+            </motion.div>
           );
         })}
-      </div>
+      </motion.div>
     </div>
   );
 };
