@@ -1,24 +1,22 @@
-import Footer from "./components/sections/Footer";
 import Navbar from "./components/sections/Navbar";
 import "./globals.css";
 import { Roboto_Mono } from "next/font/google";
 import { Ubuntu_Mono } from "next/font/google";
 import { cls } from "./utils/utils";
-import classes from "./components/styles/CustomCursor.module.scss";
 import FooterProgress from "./components/FooterProgress";
+import { Analytics } from "@vercel/analytics/react";
 
 const robotoMono = Roboto_Mono({ subsets: ["latin"] });
 const ubuntuMono = Ubuntu_Mono({ weight: "400", subsets: ["latin"] });
 
 export const metadata = {
   title: "alexjonny",
-  description:
-    "I'm Jonny (or Alex) and I'm a front-end developer and a sucker for smooth and clean design.",
+  description: "I'm Jonny and I like to play with code.",
   openGraph: {
-    title: "Next.js",
-    description: "The React Framework for the Web",
-    url: "https://nextjs.org",
-    siteName: "Next.js",
+    title: "alexjonny",
+    description: "I'm Jonny and I like to play with code.",
+    url: "https://alexjonny.com",
+    siteName: "alexjonny",
     images: [
       {
         url: "https://nextjs.org/og.png",
@@ -62,8 +60,8 @@ export default function RootLayout({
       <body className={cls("px-4 md:px-20", robotoMono.className)}>
         <Navbar />
         {children}
-        {/* <Footer /> */}
         <FooterProgress />
+        <Analytics />
       </body>
     </html>
   );
