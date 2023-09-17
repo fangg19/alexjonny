@@ -1,19 +1,10 @@
 "use client";
 import { useState } from "react";
 import Logo from "../Logo";
-import {
-  INTERNAL_NAV_LINKS,
-  cls,
-  getRandomColor,
-  scrollToElement,
-} from "@/app/utils/utils";
+import { INTERNAL_NAV_LINKS, cls, scrollToElement } from "@/app/utils/utils";
 import { motion } from "framer-motion";
 import {
-  PageVariant,
-  HeaderVariant,
-  ListVariant,
   MenuIconVariant,
-  MoveLeft,
   FadeInRight,
   FadeInUp,
 } from "../../animations/animations";
@@ -29,8 +20,6 @@ const Navbar = () => {
   function toggleMobileNav() {
     setShowMobileNav(!showMobileNav);
   }
-
-  const color = getRandomColor();
 
   return (
     <motion.nav
@@ -51,7 +40,7 @@ const Navbar = () => {
             initial="hidden"
             animate="visible"
             variants={FadeInRight}
-            className="flex flex-row justify-center items-center animate-[translate_1s_ease-in-out]"
+            className="flex flex-row justify-center items-center"
           >
             {INTERNAL_NAV_LINKS.map((link, index) => {
               return (
@@ -82,16 +71,12 @@ const Navbar = () => {
             >
               <div className="w-5 h-1 rounded-sm bg-red-500 rotate-45" />
               <div className="absolute rounded-sm w-5 h-1 bg-red-500 -rotate-45 left-0 top-0" />
-
-              {/* <div className="w-6 h-6 bg-emerald-500" /> */}
             </motion.div>
           ) : (
             <div className="border-2 border-neutral-200 w-6 h-6 bg-neutral-900 cursor-pointer" />
           )}
         </div>
       </div>
-
-      {/* <div className="w-full h-full absolute top-0 left-0 backdrop-blur-lg" /> */}
     </motion.nav>
   );
 };

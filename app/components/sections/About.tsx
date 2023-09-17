@@ -1,42 +1,15 @@
-"use client";
-import { motion } from "framer-motion";
-import {
-  PageVariant,
-  HeaderVariant,
-  AboutPhoto,
-} from "../../animations/animations";
+import { getAge } from "@/app/utils/utils";
 
 const About = () => {
-  const getAge = (): number => {
-    let age;
-    const yearOfBirth = new Date("13 Nov, 1994").getFullYear();
-    const currentDate = new Date();
-    if (currentDate.getMonth() + 1 < 11) {
-      age = currentDate.getFullYear() - yearOfBirth - 1;
-    } else {
-      age = currentDate.getFullYear() - yearOfBirth;
-    }
-    return age;
-  };
-
   return (
     <div
       id="about"
       className="flex flex-col gap-2 lg:text-xl text-justify relative"
     >
       <div className="w-full h-[2px] bg-neutral-800 mb-12" />
-      {/* <h1 className="absolute font-extrabold -ml-40 -mt-14 text-neutral-800 text-9xl">
-        WHO AM I ?
-      </h1> */}
+
       <div className="z-10 flex flex-col">
-        <motion.h2
-          key="header"
-          // initial="hidden"
-          // animate="visible"
-          // variants={HeaderVariant}
-        >
-          Hi, I&apos;m Jonny
-        </motion.h2>
+        <h2 key="header">Hi, I&apos;m Jonny</h2>
         <p>
           <s>(or Alex, I&apos;m fine with any)</s>
         </p>

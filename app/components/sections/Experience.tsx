@@ -1,14 +1,8 @@
 "use client";
 import { useState } from "react";
 import { JobType, jobs } from "../../utils/jobs";
-import { cls } from "../../utils/utils";
-import {
-  HeaderVariant,
-  StaggerContainer,
-  StaggerItem,
-} from "@/app/animations/animations";
+import { StaggerContainer, StaggerItem } from "@/app/animations/animations";
 import { motion } from "framer-motion";
-import FakeCheckbox from "../FakeCheckbox";
 import JobItem from "../JobItem";
 import JobDetails from "../JobDetails";
 

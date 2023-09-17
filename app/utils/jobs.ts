@@ -23,8 +23,8 @@ export const jobs: JobType[] = [
       {
         title: "Sessions - Video Conferencing Platform",
         description: [
-          "Developed multiple components and the interface for the various sections of the app.",
           "Created the Register and Login pages from scratch",
+          "Integrated AI features for various sections and tools of the app like: AI generated Session Agenda, Polls or Summary Generator based on the session’s transcript.",
         ],
         url: "https://sessions.us/",
       },
@@ -44,7 +44,7 @@ export const jobs: JobType[] = [
       "I have a role in developing the web app, maintaining the codebase and implementing new features.",
     ],
     period: "sept 2022 - present",
-    startDate: new Date("2022-10-05"),
+    startDate: new Date("2022-09-10"),
     endDate: new Date(),
     stillWorking: true,
     techStack: [
@@ -67,7 +67,7 @@ export const jobs: JobType[] = [
           "Crafted the elements and user interface for the checkout segment, enhancing and revamping the established process for registered users while introducing a new ordering flow for guest users.",
           "Substituted Redux with Redux Toolkit within the project.",
           "Introduced a system for applying discount vouchers to orders.",
-          "Formulated components and logic to facilitate scheduled deliveries either at the door or within vending machine lockers.",
+          "Created components and logic to facilitate scheduled deliveries either at the door or within vending machine lockers.",
           "Added and enhanced Google Enhanced E-commerce functionalities.",
           "Focused on enhancing page performance and speed, resulting in a Google Lighthouse score increase of more than 30 points.",
         ],
@@ -86,6 +86,7 @@ export const jobs: JobType[] = [
       {
         title: "UncleBob IoT vending machines",
         description: [
+          "Developed various states for the UI based on the user’s actions and the machine’s responses.",
           "Enhanced the user interface for an upgraded visual experience.",
           "Implemented alterations and additions to user interface elements to enhance overall user experience.",
         ],
@@ -94,8 +95,9 @@ export const jobs: JobType[] = [
       {
         title: "Others",
         description: [
-          "Developed a presentation website entirely from the ground up for an international conference using Next.js.",
+          "Developed a landing page entirely from the ground up for an international conference using Next.js.",
         ],
+        url: "https://bobnet.tech/",
       },
     ],
     company: "UncleBob",

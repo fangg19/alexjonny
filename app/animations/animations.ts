@@ -40,6 +40,22 @@ export const FadeInLeft = {
   },
 };
 
+export const FadeInBottomToTop = {
+  hidden: {
+    y: 60,
+    opacity: 0,
+  },
+
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.9,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+};
+
 export const FadeInRight = {
   hidden: {
     x: 60,

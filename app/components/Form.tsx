@@ -1,10 +1,11 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Button from "./Button";
 import { FieldValues, useForm } from "react-hook-form";
-import ReCAPTCHA from "react-google-recaptcha";
 import Loader from "./Loader";
 import { cls } from "../utils/utils";
+import { motion } from "framer-motion";
+import { StaggerContainer } from "../animations/animations";
 
 interface FormProps {
   setEmailSent: React.Dispatch<React.SetStateAction<boolean>>;
@@ -158,27 +159,32 @@ const ContactForm = () => {
   const [emailError, setEmailError] = useState(false);
   const [loader, setLoader] = useState(false);
 
-  const reRef = useRef<any>();
-
   return (
-    <div className="flex flex-col w-full lg:w-1/2">
-      {/* <ReCAPTCHA
-        sitekey={
-          process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as unknown as string
-        }
-        size="invisible"
-        ref={reRef}
-      /> */}
+    <div className="flex flex-col w-full  lg:w-1/2">
       <div className="w-full h-full flex flex-col items-center justify-center">
-        {emailSent ? <h2>Thanks for your message!</h2> : null}
+        {emailSent ? (
+          <motion.div
+            className="flex flex-col items-center justify-center w-full h-full"
+            variants={StaggerContainer}
+            initial="hidden"
+            animate="visible"
+          >
+            <h2>Thanks for your message!</h2>
+            <h2>I&apos;ll get back to you as soon as possible.</h2>
+          </motion.div>
+        ) : null}
       </div>
-      {emailError ? <h2>Ooops! There was an error. Please retry.</h2> : null}
+      {emailError ? (
+        <h2>Ooops! There was an error. Please try again.</h2>
+      ) : null}
       {loader ? (
         <div className="w-full h-full flex flex-col items-center justify-center">
           <Loader />
           <h3>Sending your message...</h3>
         </div>
-      ) : (
+      ) : null}
+
+      {!loader && !emailSent && !emailError && (
         <Form
           setEmailError={setEmailError}
           setEmailSent={setEmailSent}
