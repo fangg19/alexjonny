@@ -6,6 +6,7 @@ import { IBM_Plex_Mono } from "next/font/google";
 import { cls } from "./utils/utils";
 import FooterProgress from "./components/FooterProgress";
 import { Analytics } from "@vercel/analytics/react";
+import { Metadata } from "next";
 
 const robotoMono = Roboto_Mono({
   weight: ["300", "400", "500", "600", "700"],
@@ -19,24 +20,24 @@ const ibmPlexMono = IBM_Plex_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "alexjonny",
-  description: "I'm Jonny and I like to play with code.",
+  description: "I'm Jonny and I like to code I think.",
   openGraph: {
     title: "alexjonny",
-    description: "I'm Jonny and I like to play with code.",
+    description: "I'm Jonny and I like to code I think.",
     url: "https://alexjonny.com",
     siteName: "alexjonny",
     images: [
       {
-        url: "/assets/images/og_twitter.png",
-        width: 800,
-        height: 600,
+        url: "public/assets/images/og_twitter.png",
+        width: 1012,
+        height: 506,
       },
       {
-        url: "/assets/images/og_twitter.png",
-        width: 1800,
-        height: 1600,
+        url: "public/assets/images/og_twitter.png",
+        width: 1012,
+        height: 506,
         alt: "alt og image",
       },
     ],
@@ -57,7 +58,7 @@ export const metadata = {
       },
     ],
   },
-  themeColor: "black",
+  themeColor: "dark",
 };
 
 export default function RootLayout({
