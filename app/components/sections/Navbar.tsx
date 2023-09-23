@@ -46,7 +46,7 @@ const Navbar = () => {
               return (
                 <li key={index} className="flex flex-row items-center">
                   <div
-                    className="lg:hover:font-semibold lg:hover:text-emerald-500 cursor-pointer"
+                    className="lg:hover:font-semibold lg:hover:text-purple-500 cursor-pointer"
                     onClick={() => handleScroll(link.name)}
                   >
                     <span>{link.name}</span>

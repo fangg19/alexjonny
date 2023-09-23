@@ -33,3 +33,17 @@ body {
   background: rgb(var(--neutral-200));
   color: rgb(var(--neutral-900));
 }
+
+body::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: rgb(var(--neutral-200));        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(var(--neutral-900));    /* color of the scroll thumb */
+  /* border-radius: 20px;       roundness of the scroll thumb */
+  border: 3px solid rgb(var(--neutral-200));  /* creates padding around scroll thumb */
+}

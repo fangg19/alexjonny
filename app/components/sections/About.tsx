@@ -2,10 +2,7 @@ import { getAge } from "@/app/utils/utils";
 
 const About = () => {
   return (
-    <div
-      id="about"
-      className="flex flex-col gap-2 lg:text-lg text-justify relative"
-    >
+    <div id="about" className="flex flex-col gap-2 text-justify relative">
       <div className="w-full h-[2px] bg-neutral-800 mb-12" />
 
       <div className="z-10 flex flex-col">

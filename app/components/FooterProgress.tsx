@@ -6,7 +6,7 @@ function FooterProgress() {
 
   return (
     <motion.div
-      className="fixed bottom-0 left-0 bg-emerald-500 h-1 min-w-full"
+      className="fixed bottom-0 left-0 bg-purple-500 h-1 min-w-full"
       style={{ scaleX: scrollYProgress }}
     />
   );

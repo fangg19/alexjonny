@@ -2,12 +2,22 @@ import Navbar from "./components/sections/Navbar";
 import "./globals.css";
 import { Roboto_Mono } from "next/font/google";
 import { Ubuntu_Mono } from "next/font/google";
+import { IBM_Plex_Mono } from "next/font/google";
 import { cls } from "./utils/utils";
 import FooterProgress from "./components/FooterProgress";
 import { Analytics } from "@vercel/analytics/react";
 
-const robotoMono = Roboto_Mono({ subsets: ["latin"] });
+const robotoMono = Roboto_Mono({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+});
+
 const ubuntuMono = Ubuntu_Mono({ weight: "400", subsets: ["latin"] });
+
+const ibmPlexMono = IBM_Plex_Mono({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+});
 
 export const metadata = {
   title: "alexjonny",
@@ -65,7 +75,7 @@ export default function RootLayout({
           sizes="32x32"
         />
       </head>
-      <body className={cls("px-4 md:px-20", robotoMono.className)}>
+      <body className={cls("px-4 md:px-20", ibmPlexMono.className)}>
         <Navbar />
         {children}
         <FooterProgress />
