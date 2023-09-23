@@ -29,15 +29,15 @@ export const metadata = {
     siteName: "alexjonny",
     images: [
       {
-        url: "https://nextjs.org/og.png",
+        url: "/assets/images/og_twitter.png",
         width: 800,
         height: 600,
       },
       {
-        url: "https://nextjs.org/og-alt.png",
+        url: "/assets/images/og_twitter.png",
         width: 1800,
         height: 1600,
-        alt: "My custom alt",
+        alt: "alt og image",
       },
     ],
     locale: "en_US",

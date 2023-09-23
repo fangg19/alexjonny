@@ -9,8 +9,9 @@ import { scrollToElement } from "@/app/utils/utils";
 import useIsMobile from "@/app/utils/use-is-mobile-hook";
 
 const Work = () => {
-  const [selectedJob, setSelectedJob] = useState<JobType | null>(jobs[0]);
+  const [selectedJob, setSelectedJob] = useState<JobType | null>(null);
   const isMobile = useIsMobile();
+
   const handleSelectJob = (job: JobType) => {
     if (selectedJob?.id === job.id) {
       setSelectedJob(null);
