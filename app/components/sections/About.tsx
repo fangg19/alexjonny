@@ -2,19 +2,24 @@ import { getAge } from "@/app/utils/utils";
 
 const About = () => {
   return (
-    <div id="about" className="flex flex-col gap-2 text-justify relative">
+    <div
+      id="about"
+      itemType="https://schema.org/Person"
+      className="flex flex-col gap-2 text-justify relative"
+    >
       <div className="w-full h-[2px] bg-neutral-800 mb-12" />
 
       <div className="z-10 flex flex-col">
-        <h3>Hi, I&apos;m Jonny</h3>
+        <h3 itemProp="givenName">Hi, I&apos;m Jonny</h3>
         <p>
-          <s>(or Alex, I&apos;m fine with any)</s>
+          <s itemProp="givenName">(or Alex, I&apos;m fine with any)</s>
         </p>
         <br />
         <p>
           A<strong itemProp="age"> {getAge()}</strong> years old guy based in
-          Bucharest, Romania who&apos;s really into web development and
-          everything digital in general.
+          <span itemProp="addressLocality"> Bucharest</span>,{" "}
+          <span itemProp="addressCountry">Romania</span> who&apos;s really into
+          web development and everything digital in general.
           <br />
           <br />
           I got my hands on a computer back in the early 2000s and I&apos;ve

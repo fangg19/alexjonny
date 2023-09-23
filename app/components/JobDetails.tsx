@@ -11,9 +11,14 @@ const JobDetails = (props: JobDetailsProps) => {
   const { job } = props;
 
   return (
-    <div>
+    <div itemType="https://schema.org/Organization">
       {job?.url ? (
-        <a href={job?.url} target="_blank" referrerPolicy="no-referrer">
+        <a
+          itemProp="url"
+          href={job?.url}
+          target="_blank"
+          referrerPolicy="no-referrer"
+        >
           <h2 className="font-bold text-lg mb-2 underline underline-offset-2">
             {job.title} &#8599;
           </h2>

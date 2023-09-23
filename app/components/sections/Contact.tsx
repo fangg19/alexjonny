@@ -25,6 +25,7 @@ const Contact = () => {
           <a
             className="underline underline-offset-2"
             href="mailto:hello@alexjonny.com"
+            itemProp="email"
           >
             here
           </a>{" "}

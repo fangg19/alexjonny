@@ -3,10 +3,10 @@ import "./globals.css";
 import { Roboto_Mono } from "next/font/google";
 import { Ubuntu_Mono } from "next/font/google";
 import { IBM_Plex_Mono } from "next/font/google";
-import { cls } from "./utils/utils";
 import FooterProgress from "./components/FooterProgress";
 import { Analytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
+import { keywords } from "./utils/keywords";
 
 const robotoMono = Roboto_Mono({
   weight: ["300", "400", "500", "600", "700"],
@@ -23,6 +23,19 @@ const ibmPlexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   title: "alexjonny",
   description: "I'm Jonny and I like to code I think.",
+  authors: [{ name: "Serban Alexandru Jonny", url: "https://alexjonny.com" }],
+  category: "Portfolio",
+  metadataBase: new URL("https://alexjonny.com"),
+  viewport: "width=device-width, initial-scale=1.0",
+  colorScheme: "dark",
+  keywords: keywords,
+  themeColor: "dark",
+  robots: {
+    follow: true,
+    index: true,
+    nocache: false,
+    googleBot: "index,follow",
+  },
   openGraph: {
     title: "alexjonny",
     description: "I'm Jonny and I like to code I think.",
@@ -35,16 +48,11 @@ export const metadata: Metadata = {
         height: 450,
       },
     ],
-    locale: "en_US",
+    locale: "en_GB",
+    alternateLocale: ["en_US"],
+    countryName: "Romania",
+    emails: ["hello@alexjonny.com", "alexjohnny6@gmail.com"],
     type: "website",
-  },
-
-  themeColor: "dark",
-  robots: {
-    follow: true,
-    index: true,
-    nocache: false,
-    googleBot: "index,follow",
   },
 };
 
@@ -55,7 +63,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cls(ibmPlexMono.className)}>
+      <body className={ibmPlexMono.className}>
         <Navbar />
         {children}
         <FooterProgress />
