@@ -46,7 +46,7 @@ const Navbar = () => {
               return (
                 <li key={index} className="flex flex-row items-center">
                   <div
-                    className="hover:font-semibold hover:text-emerald-500 cursor-pointer"
+                    className="lg:hover:font-semibold lg:hover:text-emerald-500 cursor-pointer"
                     onClick={() => handleScroll(link.name)}
                   >
                     <span>{link.name}</span>
@@ -73,7 +73,7 @@ const Navbar = () => {
               <div className="absolute rounded-sm w-5 h-1 bg-red-500 -rotate-45 left-0 top-0" />
             </motion.div>
           ) : (
-            <div className="border-2 border-neutral-200 w-6 h-6 bg-neutral-900 cursor-pointer" />
+            <div className="border-2 border-neutral-200 w-5 h-5 bg-neutral-900 cursor-pointer" />
           )}
         </div>
       </div>
