@@ -28,35 +28,24 @@ export const metadata: Metadata = {
     description: "I'm Jonny and I like to code I think.",
     url: "https://alexjonny.com",
     siteName: "alexjonny",
-    // images: [
-    //   {
-    //     url: "opengraph-image.png",
-    //     width: 1200,
-    //     height: 630,
-    //   },
-    // ],
+    images: [
+      {
+        url: "opengraph-image.png",
+        width: 900,
+        height: 450,
+      },
+    ],
     locale: "en_US",
     type: "website",
   },
-  // icons: {
-  //   icon: [{ url: "/favicon.ico" }],
-  //   shortcut: ["/shortcut-icon.png"],
-  //   apple: [
-  //     { url: "/apple-touch-icon.png" },
-  //     { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-  //   ],
-  //   other: [
-  //     {
-  //       rel: "favicon-16x16",
-  //       url: "/favicon-16x16.png",
-  //     },
-  //     {
-  //       rel: "favicon-32x32",
-  //       url: "/favicon-32x32.png",
-  //     },
-  //   ],
-  // },
+
   themeColor: "dark",
+  robots: {
+    follow: true,
+    index: true,
+    nocache: false,
+    googleBot: "index,follow",
+  },
 };
 
 export default function RootLayout({
@@ -66,10 +55,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* <head>
-        <link rel="icon" href="/favicon.ico" />
-      </head> */}
-      <body className={cls("px-4 md:px-20", ibmPlexMono.className)}>
+      <body className={cls(ibmPlexMono.className)}>
         <Navbar />
         {children}
         <FooterProgress />
