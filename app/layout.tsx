@@ -28,19 +28,19 @@ export const metadata: Metadata = {
     description: "I'm Jonny and I like to code I think.",
     url: "https://alexjonny.com",
     siteName: "alexjonny",
-    images: [
-      {
-        url: "public/assets/images/og_twitter.png",
-        width: 1012,
-        height: 506,
-      },
-      {
-        url: "public/assets/images/og_twitter.png",
-        width: 1012,
-        height: 506,
-        alt: "alt og image",
-      },
-    ],
+    // images: [
+    //   {
+    //     url: "public/assets/images/og_twitter.png",
+    //     width: 1012,
+    //     height: 506,
+    //   },
+    //   {
+    //     url: "public/assets/images/og_twitter.png",
+    //     width: 1012,
+    //     height: 506,
+    //     alt: "alt og image",
+    //   },
+    // ],
     locale: "en_US",
     type: "website",
   },
