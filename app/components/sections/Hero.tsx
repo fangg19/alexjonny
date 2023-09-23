@@ -8,10 +8,13 @@ import {
   scrollToElement,
 } from "@/app/utils/utils";
 import classes from "../styles/NavItem.module.scss";
+import useIsMobile from "@/app/utils/use-is-mobile-hook";
 
 const Hero = () => {
+  const isMobile = useIsMobile();
+
   function handleScroll(elementId: string) {
-    scrollToElement(elementId);
+    scrollToElement(elementId, isMobile);
   }
 
   return (

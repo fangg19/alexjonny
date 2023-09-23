@@ -29,7 +29,7 @@ const Navbar = () => {
       variants={FadeInUp}
       className={cls(
         showMobileNav && "bg-neutral-900",
-        "w-full flex flex-row items-center justify-between py-4 sticky top-0 z-20"
+        "w-full flex flex-row items-center justify-between text-sm py-4 -mx-1 sticky top-0 z-20"
       )}
     >
       <Logo />

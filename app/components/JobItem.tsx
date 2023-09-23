@@ -8,10 +8,11 @@ type JobItemProps = {
   job: JobType;
   selectedJob: JobType | null;
   handleSelectJob: (job: JobType) => void;
+  id: number;
 };
 
 const JobItem = (props: JobItemProps) => {
-  const { job, selectedJob, handleSelectJob } = props;
+  const { job, selectedJob, handleSelectJob, id } = props;
 
   const isSelected = selectedJob?.id === job?.id;
 
@@ -34,6 +35,7 @@ const JobItem = (props: JobItemProps) => {
           !isSelected && "opacity-20 cursor-pointer",
           "flex flex-row relative items-center w-fit"
         )}
+        id={id.toString()}
       >
         <FakeCheckbox isEmpty={!isSelected} />
         <div className="ml-4 flex flex-row gap-2 items-center">

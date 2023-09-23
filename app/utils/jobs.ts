@@ -39,8 +39,8 @@ export const jobs: JobType[] = [
     ],
     company: "Sessions",
     companyDescription: [
-      "Sessions is a videoconferencing app suited for webinars, workshops and demos.",
-      "A fast growing startup with over 22.000 active users and growing daily, Sessions strives to be a better choice in reaching people by providing the required set of tools in one place.",
+      "Currently I work at Sessions.",
+      "A fast growing startup with over 22.000 active users and growing daily, Sessions strives to be a better choice for videoconferencing by having the required set of tools in one place.",
       "I have a role in developing the web app, maintaining the codebase and implementing new features.",
     ],
     period: "sept 2022 - present",
@@ -102,8 +102,9 @@ export const jobs: JobType[] = [
     ],
     company: "UncleBob",
     companyDescription: [
-      "Unclebob is a romanian start-up which aims to be an e-commerce platform offering the everyday essentials and can conveniently be a one-stop destination for the general shopping needs.",
-      "Additionally, unclebob.ro innovatively integrates self-service vending machines which employ light and weight sensors to detect the selected items.",
+      "For almost a year I worked at UncleBob. The place where it all started.",
+      "Unclebob is a romanian start-up which aims to be more than an online market, offering the everyday essentials and can conveniently be a one-stop destination for the general shopping needs.",
+      "Additionally, unclebob.ro, besides other cool things they do, innovatively integrates self-service vending machines with a bunch of light and weight sensors to provide a faster and easier shopping experience.",
     ],
     period: "sept 2021 - aug 2022",
     startDate: new Date("2021-10-16"),
@@ -133,7 +134,9 @@ export const jobs: JobType[] = [
       },
     ],
     company: "home",
-    companyDescription: ["other things I've done in the past / I'm doing now"],
+    companyDescription: [
+      "other things I've done in the past / I'm doing now at home :)",
+    ],
     period: "sept 2021 - aug 2022",
     startDate: new Date("2020-07-13"),
     endDate: new Date(),

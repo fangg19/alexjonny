@@ -1,14 +1,16 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { JobType, jobs } from "../../utils/jobs";
 import { StaggerContainer, StaggerItem } from "@/app/animations/animations";
 import { motion } from "framer-motion";
 import JobItem from "../JobItem";
 import JobDetails from "../JobDetails";
+import { scrollToElement } from "@/app/utils/utils";
+import useIsMobile from "@/app/utils/use-is-mobile-hook";
 
-const Experience = () => {
-  const [selectedJob, setSelectedJob] = useState<JobType | null>(null);
-
+const Work = () => {
+  const [selectedJob, setSelectedJob] = useState<JobType | null>(jobs[0]);
+  const isMobile = useIsMobile();
   const handleSelectJob = (job: JobType) => {
     if (selectedJob?.id === job.id) {
       setSelectedJob(null);
@@ -16,6 +18,11 @@ const Experience = () => {
     }
     setSelectedJob(job);
   };
+
+  useEffect(() => {
+    if (!selectedJob || !isMobile) return;
+    scrollToElement(selectedJob.id.toString(), true);
+  }, [selectedJob, isMobile]);
 
   return (
     <div id="work" className="flex flex-col lg:flex-row justify-between w-full">
@@ -27,6 +34,7 @@ const Experience = () => {
               job={job}
               selectedJob={selectedJob}
               key={job.id}
+              id={job.id}
             />
           );
         })}
@@ -55,4 +63,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default Work;

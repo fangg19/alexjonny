@@ -1,13 +1,15 @@
-import { scrollToElement } from "../utils/utils";
-
+import { cls, scrollToElement } from "../utils/utils";
+import classes from "./styles/Logo.module.scss";
 const Logo = () => {
   return (
     <div
       onClick={() => scrollToElement("home")}
-      className="cursor-pointer flex flex-col border-2 p-2 border-neutral-200 bg-neutral-900 w-14 h-14 items-start justify-center"
+      className="cursor-pointer flex flex-row items-center bg-neutral-900"
     >
-      <p className="text-sm text-neutral-200 font-semibold">alex</p>
-      <p className="text-sm text-neutral-200 font-semibold">jonny</p>
+      <p className="text-sm text-neutral-200">alex_jonny</p>
+      <div
+        className={cls(classes.logoBlock, "w-[10px] h-[20px] bg-neutral-200")}
+      />
     </div>
   );
 };

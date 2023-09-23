@@ -9,11 +9,18 @@ export function cls(...args: any[]): string {
   return s.substr(1);
 }
 
-export function scrollToElement(elementId: string) {
+export function scrollToElement(elementId: string, isMobile?: boolean) {
+  console.log("isMobile", isMobile);
   if (!elementId) return;
   const elementToSCroll = document.getElementById(elementId);
+
   window.scrollTo({
-    top: elementToSCroll ? elementToSCroll.offsetTop - 140 : 0,
+    top:
+      elementToSCroll && !isMobile
+        ? elementToSCroll.offsetTop - 140
+        : elementToSCroll && isMobile
+        ? elementToSCroll.offsetTop - 40
+        : 0,
     behavior: "smooth",
   });
 }

@@ -1,9 +1,7 @@
-import Blobs from "./components/Blobs";
 import About from "./components/sections/About";
 import Contact from "./components/sections/Contact";
-import Experience from "./components/sections/Experience";
+import Work from "./components/sections/Work";
 import Hero from "./components/sections/Hero";
-import Projects from "./components/sections/Projects";
 
 export default function Home() {
   return (
@@ -17,7 +15,7 @@ export default function Home() {
       </section>
 
       <section className="flex flex-col lg:flex-row items-start w-full">
-        <Experience />
+        <Work />
       </section>
       <section className="flex flex-col lg:flex-row items-start w-full">
         <Contact />
