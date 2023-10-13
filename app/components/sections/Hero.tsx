@@ -1,12 +1,8 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import {
-  EXTERNAL_NAV_LINKS,
-  INTERNAL_NAV_LINKS,
-  cls,
-  scrollToElement,
-} from "@/app/utils/utils";
+import { EXTERNAL_NAV_LINKS, INTERNAL_NAV_LINKS } from "@/app/utils/constants";
+import { cls, scrollToElement } from "@/app/utils/utils";
 import classes from "../styles/NavItem.module.scss";
 import useIsMobile from "@/app/utils/use-is-mobile-hook";
 

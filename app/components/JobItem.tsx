@@ -43,7 +43,7 @@ const JobItem = (props: JobItemProps) => {
             {job.jobTitle} @{job.company}
           </h1>
           &mdash;
-          <p className="flex-wrap">
+          <p className="flex-wrap text-sm lg:text-base text-ellipsis">
             {getDaysCount(job.startDate, job.endDate, job.stillWorking)}
           </p>
         </div>

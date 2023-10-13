@@ -5,9 +5,10 @@ const About = () => {
     <div
       id="about"
       itemType="https://schema.org/Person"
-      className="flex flex-col gap-2 text-justify relative"
+      className="mb-12 lg:mb-0 flex flex-col gap-2 text-justify relative"
     >
-      <div className="w-full h-[2px] bg-neutral-800 mb-12" />
+      <h1 className="text-xl font-bold text-neutral-600">-- who am i? --</h1>
+      <div className="w-full h-[2px] bg-neutral-800 mb-6" />
 
       <div className="z-10 flex flex-col">
         <h3 itemProp="givenName">Hi, I&apos;m Jonny</h3>
@@ -36,7 +37,7 @@ const About = () => {
           appreciate beautiful things that I stumble upon.
         </p>
       </div>
-      <div className="w-full h-[2px] bg-neutral-800 mt-12" />
+      {/* <div className="w-full h-[2px] bg-neutral-800 mt-12" /> */}
     </div>
   );
 };

@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
 import Logo from "../Logo";
-import { INTERNAL_NAV_LINKS, cls, scrollToElement } from "@/app/utils/utils";
+import { cls, scrollToElement } from "@/app/utils/utils";
+import { INTERNAL_NAV_LINKS } from "@/app/utils/constants";
 import { motion } from "framer-motion";
 import {
   MenuIconVariant,
