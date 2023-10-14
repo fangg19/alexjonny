@@ -56,7 +56,7 @@ const JobItem = (props: JobItemProps) => {
               return <p key={index}>{text}</p>;
             })}
           </div>
-          <div className="flex flex-row gap-x-4 mt-2 flex-wrap">
+          <div className="flex flex-row gap-x-2 mt-2 flex-wrap">
             {selectedJob?.techStack.map((tech, index) => {
               return (
                 <div key={index} className="flex flex-row items-center gap-2">
