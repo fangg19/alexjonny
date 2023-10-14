@@ -1,8 +1,12 @@
 "use client";
 import { motion, useScroll } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 function FooterProgress() {
   const { scrollYProgress } = useScroll();
+  const pathname = usePathname();
+
+  if (pathname !== "/") return null;
 
   return (
     <motion.div

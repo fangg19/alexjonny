@@ -1,7 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
 import { JobType, jobs } from "../../utils/jobs";
-import { StaggerContainer, StaggerItem } from "@/app/animations/animations";
+import {
+  FadeInLeft,
+  StaggerContainer,
+  StaggerItem,
+} from "@/app/animations/animations";
 import { motion } from "framer-motion";
 import JobItem from "../JobItem";
 import JobDetails from "../JobDetails";
@@ -35,7 +39,15 @@ const Work = () => {
 
   return (
     <div id="work" className="flex flex-col w-full gap-2 mb-12 lg:mb-0">
-      <h1 className="text-xl font-bold  text-neutral-600">{labelText}</h1>
+      <motion.h1
+        variants={FadeInLeft}
+        initial="hidden"
+        animate="visible"
+        className="text-xl font-bold  text-neutral-600"
+        key={labelText}
+      >
+        {labelText}
+      </motion.h1>
       <div className="w-full h-[2px] bg-neutral-800 mb-6" />
 
       <div className="flex flex-col lg:flex-row justify-between w-full">
