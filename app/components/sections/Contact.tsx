@@ -16,14 +16,13 @@ const Contact = () => {
           remarkable.
         </p>
         <p>
-          So, if you love web development and clean and smooth design as much as
-          I do, have something interesting to discuss about or just simply want
-          to say hi, just hit me up and we can have a chat over a cup of coffee.
-          I&apos;m enthusiastic to work with nice individuals and creative minds
-          so don&apos;t hesitate to fill out the form or simply send me an
-          e-mail{" "}
+          So, if you like programming, have something interesting to discuss
+          about or just simply want to say hi, just hit me up and we can have a
+          chat over a cup of coffee. I&apos;m enthusiastic to work with nice
+          individuals and creative minds so don&apos;t hesitate to fill out the
+          form or simply send me an e-mail{" "}
           <a
-            className="underline underline-offset-2"
+            className="underline underline-offset-2 text-neutral-800 font-bold px-2 bg-neutral-200"
             href="mailto:hello@alexjonny.com"
             itemProp="email"
           >

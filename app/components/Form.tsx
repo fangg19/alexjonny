@@ -19,7 +19,7 @@ const Form = (props: FormProps) => {
   const clearMessage = () => {
     setTimeout(() => {
       setEmailSent(false);
-    }, 5000);
+    }, 8000);
   };
 
   const {
@@ -77,8 +77,8 @@ const Form = (props: FormProps) => {
             name="name"
           />
           {errors.name && (
-            <span className="text-xs text-red-500 mt-2">
-              Let me know your name.
+            <span className="text-sm text-red-500 mt-2">
+              let me know your name
             </span>
           )}
         </div>
@@ -98,8 +98,8 @@ const Form = (props: FormProps) => {
             name="email"
           />
           {errors.email && (
-            <span className="text-xs text-red-500 mt-2">
-              I need your valid e-mail address.
+            <span className="text-sm text-red-500 mt-2">
+              I need your valid e-mail address
             </span>
           )}
         </div>
@@ -116,8 +116,8 @@ const Form = (props: FormProps) => {
             name="subject"
           />
           {errors.subject && (
-            <span className="text-xs text-red-500 mt-2">
-              Please enter a subject.
+            <span className="text-sm text-red-500 mt-2">
+              please say something
             </span>
           )}
         </div>
@@ -134,8 +134,8 @@ const Form = (props: FormProps) => {
             name="message"
           />
           {errors.message && (
-            <span className="text-xs text-red-500 mt-2">
-              You need to type your message.
+            <span className="text-sm text-red-500 mt-2">
+              please say something here too
             </span>
           )}
         </div>
@@ -164,13 +164,16 @@ const ContactForm = () => {
       <div className="w-full h-full flex flex-col items-center justify-center">
         {emailSent ? (
           <motion.div
-            className="flex flex-col items-center justify-center w-full h-full"
+            className="flex flex-col items-center justify-center w-full h-full text-center gap-5 border p-2 border-neutral-200"
             variants={StaggerContainer}
             initial="hidden"
             animate="visible"
           >
-            <h2>Thanks for your message!</h2>
-            <h2>I&apos;ll get back to you as soon as possible.</h2>
+            <h2>
+              whoa ! I never thought someone will ever use this contact form but
+              thanks for your message.
+            </h2>
+            <h2>If I&apos;m still alive, I&apos;ll get back to you soon :).</h2>
           </motion.div>
         ) : null}
       </div>
