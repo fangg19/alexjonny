@@ -10,7 +10,6 @@ export function cls(...args: any[]): string {
 }
 
 export function scrollToElement(elementId: string, isMobile?: boolean) {
-  console.log("isMobile", isMobile);
   if (!elementId) return;
   const elementToSCroll = document.getElementById(elementId);
 

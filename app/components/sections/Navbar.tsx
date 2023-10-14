@@ -8,10 +8,13 @@ import {
   MenuIconVariant,
   FadeInRight,
   FadeInUp,
+  ScaleUp,
 } from "../../animations/animations";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
+  const pathname = usePathname();
 
   function handleScroll(elementId: string) {
     scrollToElement(elementId);
@@ -22,6 +25,8 @@ const Navbar = () => {
     setShowMobileNav(!showMobileNav);
   }
 
+  if (pathname !== "/") return null;
+
   return (
     <motion.nav
       key="navbar"
@@ -30,7 +35,7 @@ const Navbar = () => {
       variants={FadeInUp}
       className={cls(
         showMobileNav && "bg-neutral-900",
-        "w-full flex flex-row items-center justify-between text-sm py-4 px-4 md:px-20 sticky top-0 z-20"
+        "w-full flex flex-row items-center justify-between text-sm py-4 px-4 md:px-20 sticky top-0 z-20 bg-neutral-900"
       )}
     >
       <Logo />
@@ -74,7 +79,21 @@ const Navbar = () => {
               <div className="absolute rounded-sm w-5 h-1 bg-red-500 -rotate-45 left-0 top-0" />
             </motion.div>
           ) : (
-            <div className="border-2 border-neutral-200 w-5 h-5 bg-neutral-900 cursor-pointer" />
+            <motion.p
+              key="menu-button"
+              initial="hidden"
+              animate="visible"
+              variants={ScaleUp}
+              className="text-sm cursor-pointer"
+            >
+              menu
+            </motion.p>
+
+            // <div className="border-2 border-neutral-200 w-6 h-6 px-[2px] flex flex-col bg-neutral-900 cursor-pointer">
+            //   <div className="w-full h-[2px] bg-neutral-200 mt-1" />
+            //   <div className="w-full h-[2px] bg-neutral-200 mt-1" />
+            //   <div className="w-full h-[2px] bg-neutral-200 mt-1" />
+            // </div>
           )}
         </div>
       </div>
