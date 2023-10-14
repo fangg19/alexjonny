@@ -124,6 +124,14 @@ export const jobs: JobType[] = [
     jobTitle: "",
     content: [
       {
+        title: "Executori Judecatoresti Bogaciu & Sorescu",
+
+        description: ["Work still in progress"],
+
+        url: "https://www.executoribucuresti.ro/",
+      },
+
+      {
         title: "Executor Judecatoresc Ochian Doru Catalin",
         description: [
           "Developed the website entirely from the ground up using Next.js and Tailwind.",
