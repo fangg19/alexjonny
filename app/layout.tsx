@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://alexjonny.com"),
   viewport: "width=device-width, initial-scale=1.0",
   colorScheme: "dark",
-  keywords: keywords,
+  keywords: keywords.join(", "),
   themeColor: "dark",
   robots: {
     follow: true,
