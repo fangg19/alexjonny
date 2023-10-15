@@ -73,7 +73,7 @@ const JobItem = (props: JobItemProps) => {
 
       {isSelected && (
         <div className="lg:w-1/2  lg:hidden mt-4">
-          {selectedJob?.content?.map((job, index) => {
+          {selectedJob?.jobDetails?.map((job, index) => {
             return (
               <div key={index + 2} className="mb-6">
                 <JobDetails job={job} />

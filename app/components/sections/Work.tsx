@@ -72,7 +72,7 @@ const Work = () => {
           className="lg:w-1/2 hidden lg:block"
           key={selectedJob?.id}
         >
-          {selectedJob?.content?.map((job, index) => {
+          {selectedJob?.jobDetails?.map((job, index) => {
             return (
               <motion.div
                 variants={StaggerItem}
