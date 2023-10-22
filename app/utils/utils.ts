@@ -9,16 +9,20 @@ export function cls(...args: any[]): string {
   return s.substr(1);
 }
 
-export function scrollToElement(elementId: string, isMobile?: boolean) {
+export function scrollToElement(
+  elementId: string,
+  isMobile?: boolean,
+  diff?: number
+) {
   if (!elementId) return;
   const elementToSCroll = document.getElementById(elementId);
-
+  console.log("diff", diff);
   window.scrollTo({
     top:
       elementToSCroll && !isMobile
         ? elementToSCroll.offsetTop - 140
         : elementToSCroll && isMobile
-        ? elementToSCroll.offsetTop - 40
+        ? elementToSCroll.offsetTop - (diff ?? 60)
         : 0,
     behavior: "smooth",
   });

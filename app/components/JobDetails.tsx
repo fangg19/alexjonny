@@ -1,11 +1,6 @@
-import React from "react";
 import { JobType } from "../utils/jobs";
 import { motion } from "framer-motion";
-import {
-  FadeInRight,
-  StaggerContainer,
-  StaggerItem,
-} from "../animations/animations";
+import { StaggerContainer, StaggerItem } from "../animations/animations";
 
 type JobDetailsProps = {
   job: JobType["jobDetails"][0];
@@ -13,7 +8,6 @@ type JobDetailsProps = {
 
 const JobDetails = (props: JobDetailsProps) => {
   const { job } = props;
-  console.log("job ----", job);
   return (
     <div itemType="https://schema.org/Organization">
       {job?.url ? (

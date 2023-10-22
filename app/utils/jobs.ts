@@ -42,6 +42,17 @@ export const jobs: JobType[] = [
         ],
         url: "https://sessions.us/",
       },
+      {
+        title: "Event/Webinar landing page",
+        description: [
+          {
+            primaryText:
+              "Developed a dynamic landing page for webinars module.",
+            secondaryText: [],
+          },
+        ],
+        url: "",
+      },
     ],
     company: "Sessions",
     companyDescription: [

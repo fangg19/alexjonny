@@ -75,8 +75,8 @@ const Navbar = () => {
               variants={MenuIconVariant}
               className="relative cursor-pointer"
             >
-              <div className="w-5 h-1 rounded-sm bg-red-500 rotate-45" />
-              <div className="absolute rounded-sm w-5 h-1 bg-red-500 -rotate-45 left-0 top-0" />
+              <div className="w-5 h-1 bg-red-500 rotate-45" />
+              <div className="absolute w-5 h-1 bg-red-500 -rotate-45 left-0 top-0" />
             </motion.div>
           ) : (
             <motion.p
@@ -84,16 +84,10 @@ const Navbar = () => {
               initial="hidden"
               animate="visible"
               variants={ScaleUp}
-              className="text-sm cursor-pointer"
+              className="text-sm cursor-pointer hover:text-neutral-900 hover:bg-neutral-200"
             >
               menu
             </motion.p>
-
-            // <div className="border-2 border-neutral-200 w-6 h-6 px-[2px] flex flex-col bg-neutral-900 cursor-pointer">
-            //   <div className="w-full h-[2px] bg-neutral-200 mt-1" />
-            //   <div className="w-full h-[2px] bg-neutral-200 mt-1" />
-            //   <div className="w-full h-[2px] bg-neutral-200 mt-1" />
-            // </div>
           )}
         </div>
       </div>

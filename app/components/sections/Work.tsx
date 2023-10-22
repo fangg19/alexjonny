@@ -27,7 +27,8 @@ const Work = () => {
 
   useEffect(() => {
     if (!selectedJob || !isMobile) return;
-    scrollToElement(selectedJob.id.toString(), true);
+    const diffToScroll = selectedJob?.id * 45 + 40;
+    scrollToElement(selectedJob.id.toString(), true, diffToScroll);
   }, [selectedJob, isMobile]);
 
   const labelText =
