@@ -32,7 +32,7 @@ const JobItem = (props: JobItemProps) => {
       <div
         onClick={() => handleSelectJob(job)}
         className={cls(
-          !isSelected && "opacity-20 cursor-pointer",
+          !isSelected && "opacity-20 cursor-pointer hover:opacity-60",
           "flex flex-row relative items-center w-fit"
         )}
         id={id.toString()}

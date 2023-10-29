@@ -12,7 +12,7 @@ import JobDetails from "../JobDetails";
 import { scrollToElement } from "@/app/utils/utils";
 import useIsMobile from "@/app/utils/use-is-mobile-hook";
 import { jobSectionLabels } from "@/app/utils/constants";
-
+import Job from "../../content/HomeWork.mdx";
 const Work = () => {
   const [selectedJob, setSelectedJob] = useState<JobType | null>(null);
   const isMobile = useIsMobile();
@@ -25,6 +25,7 @@ const Work = () => {
     setSelectedJob(job);
   };
 
+  console.log("selectedJob", selectedJob);
   useEffect(() => {
     if (!selectedJob || !isMobile) return;
     const diffToScroll = selectedJob?.id * 45 + 40;
@@ -37,6 +38,12 @@ const Work = () => {
       : selectedJob?.id === jobs[0].id
       ? jobSectionLabels.current
       : jobSectionLabels.past;
+
+  const jobMDX = () => {
+    return jobs[selectedJob?.id ?? 2]?.jobMdx;
+  };
+
+  console.log("jobMDX", jobMDX());
 
   return (
     <div id="work" className="flex flex-col w-full gap-2 mb-12 lg:mb-0">
@@ -73,17 +80,7 @@ const Work = () => {
           className="lg:w-1/2 hidden lg:block"
           key={selectedJob?.id}
         >
-          {selectedJob?.jobDetails?.map((job, index) => {
-            return (
-              <motion.div
-                variants={StaggerItem}
-                key={job?.title}
-                className="mb-6"
-              >
-                <JobDetails job={job} />
-              </motion.div>
-            );
-          })}
+          {selectedJob ? selectedJob?.jobMdx?.() : null}
         </motion.div>
       </div>
     </div>

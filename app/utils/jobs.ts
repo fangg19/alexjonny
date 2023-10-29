@@ -1,11 +1,13 @@
 export interface JobType {
   id: number;
   jobTitle: string;
-  jobDetails: {
-    title: string;
-    description: { primaryText: string; secondaryText: string[] }[];
-    url?: string;
-  }[];
+  jobDetails:
+    | {
+        title: string;
+        description: { primaryText: string; secondaryText: string[] }[];
+        url?: string;
+      }[]
+    | any;
   company: string;
   companyDescription: string[];
   period: string;
@@ -13,6 +15,7 @@ export interface JobType {
   endDate: Date;
   stillWorking: boolean;
   techStack: string[];
+  jobMdx?: any;
 }
 
 export const jobs: JobType[] = [
@@ -55,6 +58,8 @@ export const jobs: JobType[] = [
       },
     ],
     company: "Sessions",
+    jobMdx: require("../content/Sessions.mdx").default,
+
     companyDescription: [
       "Currently I work at Sessions.",
       "A fast growing startup with over 22.000 active users and growing daily, Sessions strives to be a better choice for videoconferencing by having the required set of tools in one place.",
@@ -168,9 +173,13 @@ export const jobs: JobType[] = [
         url: "https://bobnet.tech/",
       },
     ],
+    jobMdx: require("../content/UncleBob.mdx").default,
+
     company: "UncleBob",
     companyDescription: [
       "For almost a year I worked at UncleBob. The place where it all started.",
+      "I enjoyed my first year as a developer, learning a lot of new things and working on various projects.",
+      "I met some great people that made my life easier and made the whole experience more enjoyable.",
       "Unclebob is a romanian start-up which aims to be more than an online market, offering the everyday essentials and can conveniently be a one-stop destination for the general shopping needs.",
       "Additionally, unclebob.ro, besides other cool things they do, innovatively integrates self-service vending machines with a bunch of light and weight sensors to provide a faster and easier shopping experience.",
     ],
@@ -196,7 +205,13 @@ export const jobs: JobType[] = [
 
         description: [
           {
-            primaryText: "Work still in progress.",
+            primaryText:
+              "Currently just a landing page with some contact details. Will be developed in the future.",
+            secondaryText: [],
+          },
+          {
+            primaryText:
+              "Had some fun with domain name and hosting setup at least.",
             secondaryText: [],
           },
         ],
@@ -218,13 +233,15 @@ export const jobs: JobType[] = [
             secondaryText: [],
           },
           {
-            primaryText: `Added headless CMS functionalities for the "Auctions" and "Documents" section.`,
+            primaryText: `I hooked up the website to a headless CMS to upload/manage the "Auctions" and "Documents" section.`,
             secondaryText: [],
           },
         ],
         url: "https://www.executarebucuresti.ro/",
       },
     ],
+
+    jobMdx: require("../content/HomeWork.mdx").default,
     company: "home",
     companyDescription: [
       "other things I've done in the past / I'm doing now at home :)",
