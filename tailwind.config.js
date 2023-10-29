@@ -19,6 +19,77 @@ module.exports = {
         "primary-gray": "#353535",
         "primary-accent": "#8B5CF6",
       },
+
+
+     keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+
+        fadeInLeft: {
+          "0%": { opacity: "0", transform: "translateX(-20px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        fadeInRight: {
+          "0%": { opacity: "0", transform: "translateX(20px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+
+        fadeInUp: {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+
+        fadeInDown: {
+          "0%": { opacity: "0", transform: "translateY(-20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+
+        fadeInLeftLine: {
+          "0%": {
+            opacity: "0",
+            transform: "translateX(-100px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateX(0)",
+          },
+        },
+
+        fadeInRightLine: {
+          "0%": {
+            opacity: "0",
+            transform: "translateX(100px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateX(0)",
+          },
+        },
+
+        rotateClose: {
+          "0%": {
+            transform: "rotate(0deg)",
+          },
+          "100%": {
+            transform: "rotate(180deg)",
+          },
+        },
+      },
+
+      animation: {
+        fadeIn: "fadeIn 2s ease-in-out",
+        fadeInLeft: "fadeInLeft 0.5s ease-in-out",
+        fadeInRight: "fadeInRight 0.5s ease-in-out",
+        fadeInUp: "fadeInUp 0.5s ease-in-out",
+        fadeInDown: "fadeInDown 0.5s ease-in-out",
+        fadeInLeftLine: "fadeInLeftLine 1.5s ease-in-out",
+        fadeInRightLine: "fadeInRightLine 1.5s ease-in-out",
+        rotateClose: "rotateClose 0.8s ease-in-out",
+      },
+
+
     },
   },
   plugins: [

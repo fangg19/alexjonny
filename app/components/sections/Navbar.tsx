@@ -3,13 +3,6 @@ import { useState } from "react";
 import Logo from "../Logo";
 import { cls, scrollToElement } from "@/app/utils/utils";
 import { INTERNAL_NAV_LINKS } from "@/app/utils/constants";
-import { motion } from "framer-motion";
-import {
-  MenuIconVariant,
-  FadeInRight,
-  FadeInUp,
-  ScaleUp,
-} from "../../animations/animations";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
@@ -28,11 +21,8 @@ const Navbar = () => {
   if (pathname !== "/") return null;
 
   return (
-    <motion.nav
+    <nav
       key="navbar"
-      initial="hidden"
-      animate={showMobileNav ? "visible" : "hidden"}
-      variants={FadeInUp}
       className={cls(
         showMobileNav && "bg-neutral-900",
         "w-full flex flex-row items-center justify-between text-sm py-4 px-4 md:px-20 sticky top-0 z-20 bg-neutral-900"
@@ -41,12 +31,9 @@ const Navbar = () => {
       <Logo />
       <div className="flex flex-row items-center gap-5">
         {showMobileNav && (
-          <motion.ul
+          <ul
             key="header"
-            initial="hidden"
-            animate="visible"
-            variants={FadeInRight}
-            className="flex flex-row justify-center items-center"
+            className="flex flex-row justify-center items-center animate-fadeInRight"
           >
             {INTERNAL_NAV_LINKS.map((link, index) => {
               return (
@@ -63,35 +50,29 @@ const Navbar = () => {
                 </li>
               );
             })}
-          </motion.ul>
+          </ul>
         )}
 
         <div className="flex" onClick={toggleMobileNav}>
           {showMobileNav ? (
-            <motion.div
+            <div
               key="close-icon"
-              initial="hidden"
-              animate="visible"
-              variants={MenuIconVariant}
-              className="relative cursor-pointer"
+              className="relative cursor-pointer animate-rotateClose"
             >
               <div className="w-5 h-1 bg-red-500 rotate-45" />
               <div className="absolute w-5 h-1 bg-red-500 -rotate-45 left-0 top-0" />
-            </motion.div>
+            </div>
           ) : (
-            <motion.p
+            <p
               key="menu-button"
-              initial="hidden"
-              animate="visible"
-              variants={ScaleUp}
               className="text-sm cursor-pointer hover:text-neutral-900 hover:bg-neutral-200"
             >
               menu
-            </motion.p>
+            </p>
           )}
         </div>
       </div>
-    </motion.nav>
+    </nav>
   );
 };
 

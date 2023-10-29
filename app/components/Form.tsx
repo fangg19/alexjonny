@@ -1,11 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import Button from "./Button";
 import { FieldValues, useForm } from "react-hook-form";
 import Loader from "./Loader";
 import { cls } from "../utils/utils";
-import { motion } from "framer-motion";
-import { StaggerContainer } from "../animations/animations";
 
 interface FormProps {
   setEmailSent: React.Dispatch<React.SetStateAction<boolean>>;
@@ -163,18 +161,13 @@ const ContactForm = () => {
     <div className="flex flex-col w-full  lg:w-1/2">
       <div className="w-full h-full flex flex-col items-center justify-center">
         {emailSent ? (
-          <motion.div
-            className="flex flex-col items-center justify-center w-full h-full text-center gap-5 border p-2 border-neutral-200"
-            variants={StaggerContainer}
-            initial="hidden"
-            animate="visible"
-          >
+          <div className="flex flex-col items-center justify-center w-full h-full text-center gap-5 border p-2 border-neutral-200 animate-fadeInUp">
             <h2>
               whoa ! I never thought someone will ever use this contact form but
               thanks for your message.
             </h2>
             <h2>If I&apos;m still alive, I&apos;ll get back to you soon :).</h2>
-          </motion.div>
+          </div>
         ) : null}
       </div>
       {emailError ? (
