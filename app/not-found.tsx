@@ -18,7 +18,7 @@ const NotFound = () => {
       </h1>
 
       <p className="text-sm lg:text-lg text-neutral-500 mt-5">
-        404 - Page Not Found
+        404 - page not found
       </p>
 
       <Link
