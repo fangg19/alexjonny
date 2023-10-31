@@ -5,9 +5,9 @@ import JobItem from "../JobItem";
 import { scrollToElement } from "@/app/utils/utils";
 import useIsMobile from "@/app/utils/use-is-mobile-hook";
 import { jobSectionLabels } from "@/app/utils/constants";
-import HomeWork from "@/app/content/home-work.mdx";
-import Sessions from "@/app/content/sessions.mdx";
-import Unclebob from "@/app/content/unclebob.mdx";
+import HomeWork from "@/app/home-work.mdx";
+import Sessions from "@/app/sessions.mdx";
+import Unclebob from "@/app/unclebob.mdx";
 
 const Work = () => {
   const [selectedJob, setSelectedJob] = useState<JobType | null>(null);
