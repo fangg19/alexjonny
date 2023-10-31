@@ -1,9 +1,9 @@
 import { JobType } from "../utils/jobs";
 import { cls } from "../utils/utils";
 import FakeCheckbox from "./FakeCheckbox";
-import HomeWork from "@/app/content/home-work.mdx";
-import Sessions from "@/app/content/sessions.mdx";
-import Unclebob from "@/app/content/unclebob.mdx";
+import HomeWork from "../content/home-work.mdx";
+import Sessions from "../content/sessions.mdx";
+import Unclebob from "../content/unclebob.mdx";
 
 type JobItemProps = {
   job: JobType;
