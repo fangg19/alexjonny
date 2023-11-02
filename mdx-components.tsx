@@ -28,7 +28,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ul: ({ children }) => <ul style={ulStyles}>{children}</ul>,
     li: ({ children }) => <li style={listItemStyles}>&raquo; {children}</li>,
     a: (props) => {
-      console.log(props);
       return (
         <a
           style={linkStyles}

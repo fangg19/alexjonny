@@ -76,6 +76,26 @@ module.exports = {
             transform: "rotate(180deg)",
           },
         },
+
+        moveToRight: {
+          "0%": {
+            transform: "translateX(-80px)",
+          },
+          "100%": {
+            transform: "translateX(0px)",
+          },
+        },
+        hideAfterMove: {
+          "0%": {
+            width: "100px"
+          },
+          "99%": {
+            width: "100px"
+          },
+          "100%": {
+            width: "0px !important"
+          },
+        },
       },
 
       animation: {
@@ -87,6 +107,8 @@ module.exports = {
         fadeInLeftLine: "fadeInLeftLine 1.5s ease-in-out",
         fadeInRightLine: "fadeInRightLine 1.5s ease-in-out",
         rotateClose: "rotateClose 0.8s ease-in-out",
+        moveToRight: "moveToRight 2s ease-in-out",
+        hideAfterMove: "hideAfterMove 2s ease-in-out",
       },
 
 
