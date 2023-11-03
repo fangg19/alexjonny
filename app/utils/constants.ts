@@ -7,12 +7,15 @@ export const jobSectionLabels = {
 export const INTERNAL_NAV_LINKS = [
   {
     name: "about",
+    url: "#about",
   },
   {
     name: "work",
+    url: "#work",
   },
   {
     name: "contact",
+    url: "#contact",
   },
 ];
 
