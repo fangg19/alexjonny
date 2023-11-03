@@ -3,7 +3,6 @@ import "./globals.css";
 import { Roboto_Mono } from "next/font/google";
 import { Ubuntu_Mono } from "next/font/google";
 import { IBM_Plex_Mono } from "next/font/google";
-import FooterProgress from "./components/FooterProgress";
 import { Analytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
 import { keywords } from "./utils/keywords";
