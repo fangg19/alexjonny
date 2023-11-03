@@ -1,18 +1,9 @@
 import Navbar from "./components/sections/Navbar";
 import "./globals.css";
-import { Roboto_Mono } from "next/font/google";
-import { Ubuntu_Mono } from "next/font/google";
 import { IBM_Plex_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
 import { keywords } from "./utils/keywords";
-
-const robotoMono = Roboto_Mono({
-  weight: ["300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-});
-
-const ubuntuMono = Ubuntu_Mono({ weight: "400", subsets: ["latin"] });
 
 const ibmPlexMono = IBM_Plex_Mono({
   weight: ["300", "400", "500", "600", "700"],
