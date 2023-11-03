@@ -6,16 +6,16 @@ import { INTERNAL_NAV_LINKS } from "@/app/utils/constants";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-  const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
+  const [showNavMenu, setShowNavMenu] = useState<boolean>(false);
   const pathname = usePathname();
 
   function handleScroll(elementId: string) {
     scrollToElement(elementId);
-    setShowMobileNav(false);
+    setShowNavMenu(false);
   }
 
-  function toggleMobileNav() {
-    setShowMobileNav(!showMobileNav);
+  function toggleNavMenu() {
+    setShowNavMenu(!showNavMenu);
   }
 
   if (pathname !== "/") return null;
@@ -24,13 +24,13 @@ const Navbar = () => {
     <nav
       key="navbar"
       className={cls(
-        showMobileNav && "bg-neutral-900",
+        showNavMenu && "bg-neutral-900",
         "w-full flex flex-row items-center justify-between text-sm py-4 px-4 md:px-20 sticky top-0 z-20 bg-neutral-900"
       )}
     >
       <Logo />
       <div className="flex flex-row items-center gap-5">
-        {showMobileNav && (
+        {showNavMenu && (
           <ul
             key="header"
             className="flex flex-row justify-center items-center animate-fadeInRight"
@@ -53,8 +53,8 @@ const Navbar = () => {
           </ul>
         )}
 
-        <div className="flex" onClick={toggleMobileNav}>
-          {showMobileNav ? (
+        <div className="flex" onClick={toggleNavMenu}>
+          {showNavMenu ? (
             <div
               key="close-icon"
               className="relative cursor-pointer animate-rotateClose"

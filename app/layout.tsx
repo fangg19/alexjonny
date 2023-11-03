@@ -66,7 +66,6 @@ export default function RootLayout({
       <body className={ibmPlexMono.className}>
         <Navbar />
         {children}
-        <FooterProgress />
         <Analytics />
       </body>
     </html>
