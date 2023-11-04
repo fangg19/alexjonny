@@ -79,7 +79,7 @@ module.exports = {
 
         logoMoveToRight: {
           "0%": {
-            transform: "translateX(-80px)",
+            transform: "translateX(-90px)",
           },
           "100%": {
             transform: "translateX(0px)",
