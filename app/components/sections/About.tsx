@@ -20,7 +20,8 @@ const About = () => {
           A<strong itemProp="age"> {getAge()}</strong> years old guy based in
           <span itemProp="addressLocality"> Bucharest</span>,{" "}
           <span itemProp="addressCountry">Romania</span> who&apos;s really into
-          web development and everything programming related in general.
+          web development and everything programming related in general that
+          enjoys spending time in front of a keyboard and a display.
           <br />
           <br />
           I got my hands on a computer back in the early 2000s and I&apos;ve
@@ -31,16 +32,17 @@ const About = () => {
           <br />
           <br />
           I&apos;m a curious and relaxed person who leans towards simplicity and
-          practicality, often guided by the question,{" "}
+          practicality, often asking{" "}
           <strong>&quot;is it really necessary?&quot;</strong>. I enjoy a good
-          sense of humor and I am consistently prepared for a hearty laugh. I
+          sense of humor and I am always prepared for a hearty laugh. I
           appreciate beautiful things that I stumble upon.
           <br />
           <br />
-          Currently I&apos;m working as a Frontend Developer at Sessions
-          (sometimes I write backend code too), a romanian startup. I enjoy
-          working with React and Typescript and at home I like to play with
-          Next.js mostly.
+          Currently I&apos;m working as a Frontend Developer (sometimes I write
+          backend code too) at Sessions, a romanian startup. I enjoy working
+          with <strong>React</strong> and <strong>Typescript</strong> and at
+          home I like to play with <strong>Next.js </strong>
+          mostly.
         </p>
       </div>
     </div>
