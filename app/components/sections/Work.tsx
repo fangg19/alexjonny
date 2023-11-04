@@ -68,9 +68,7 @@ const Work = () => {
           })}
         </div>
 
-        <div className="lg:w-1/2 hidden lg:block animate-fadeInRight">
-          {jobMDX()}
-        </div>
+        <div className="lg:w-1/2 hidden lg:block">{jobMDX()}</div>
       </div>
     </div>
   );

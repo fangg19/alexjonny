@@ -71,7 +71,7 @@ const JobItem = (props: JobItemProps) => {
               return (
                 <div
                   key={index}
-                  className="flex flex-row items-center gap-2 animate-fadeInLeft"
+                  className="flex flex-row items-center gap-2 animate-fadeInDown"
                 >
                   <p className="text-xs">[{tech}]</p>{" "}
                   {index + 1 !== selectedJob?.techStack.length && (

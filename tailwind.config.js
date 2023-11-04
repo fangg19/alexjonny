@@ -77,7 +77,7 @@ module.exports = {
           },
         },
 
-        moveToRight: {
+        logoMoveToRight: {
           "0%": {
             transform: "translateX(-80px)",
           },
@@ -85,7 +85,7 @@ module.exports = {
             transform: "translateX(0px)",
           },
         },
-        hideAfterMove: {
+        logoHideAfterMove: {
           "0%": {
             width: "100px"
           },
@@ -96,6 +96,11 @@ module.exports = {
             width: "0px !important"
           },
         },
+        logoPulse: {
+          "50%": {
+            opacity: "0",
+          }
+        }
       },
 
       animation: {
@@ -107,8 +112,9 @@ module.exports = {
         fadeInLeftLine: "fadeInLeftLine 1.5s ease-in-out",
         fadeInRightLine: "fadeInRightLine 1.5s ease-in-out",
         rotateClose: "rotateClose 0.8s ease-in-out",
-        moveToRight: "moveToRight 2s ease-in-out",
-        hideAfterMove: "hideAfterMove 2s ease-in-out",
+        logoMoveToRight: "logoMoveToRight 2s ease-in-out",
+        logoHideAfterMove: "logoHideAfterMove 2s ease-in-out",
+        logoPulse: "logoPulse 1s linear infinite",
       },
 
 
