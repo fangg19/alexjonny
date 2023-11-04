@@ -47,7 +47,10 @@ const Work = () => {
 
   return (
     <div id="work" className="flex flex-col w-full gap-2 mb-12 lg:mb-0">
-      <h1 className="text-xl font-bold  text-neutral-600 animate-fadeInLeft">
+      <h1
+        key={labelText}
+        className="text-xl font-bold  text-neutral-600 animate-fadeInLeft"
+      >
         {labelText}
       </h1>
 

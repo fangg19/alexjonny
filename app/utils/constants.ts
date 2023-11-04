@@ -1,7 +1,7 @@
 export const jobSectionLabels = {
-  default: "-- what i did/do ? --",
-  past: "-- what i did ? --",
-  current: "-- what i do ? --",
+  default: "-- what i did/do? --",
+  past: "-- what i did? --",
+  current: "-- what i do? --",
 };
 
 export const INTERNAL_NAV_LINKS = [
