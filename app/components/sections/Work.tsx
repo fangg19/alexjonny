@@ -23,7 +23,7 @@ const Work = () => {
 
   useEffect(() => {
     if (!selectedJob || !isMobile) return;
-    const diffToScroll = selectedJob?.id * 45 + 40;
+    const diffToScroll = selectedJob?.id * 65 + 80;
     scrollToElement(selectedJob.id.toString(), true, diffToScroll);
   }, [selectedJob, isMobile]);
 

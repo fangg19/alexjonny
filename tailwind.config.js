@@ -93,7 +93,7 @@ module.exports = {
             width: "100px"
           },
           "100%": {
-            width: "0px !important"
+            width: "0px"
           },
         },
         logoPulse: {
