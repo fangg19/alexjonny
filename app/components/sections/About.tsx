@@ -37,9 +37,10 @@ const About = () => {
           appreciate beautiful things that I stumble upon.
           <br />
           <br />
-          Currently I&apos;m working as a Frontend Developer at Sessions, a
-          romanian startup. I enjoy working with React and Typescript and at
-          home I like to play with Next.js mostly.
+          Currently I&apos;m working as a Frontend Developer at Sessions
+          (sometimes I write backend code too), a romanian startup. I enjoy
+          working with React and Typescript and at home I like to play with
+          Next.js mostly.
         </p>
       </div>
     </div>

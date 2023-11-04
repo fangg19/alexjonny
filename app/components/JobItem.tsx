@@ -1,8 +1,9 @@
-import React from "react";
 import { JobType } from "../utils/jobs";
 import { cls } from "../utils/utils";
 import FakeCheckbox from "./FakeCheckbox";
-import JobDetails from "./JobDetails";
+import HomeWork from "../home-work.mdx";
+import Sessions from "../sessions.mdx";
+import Unclebob from "../unclebob.mdx";
 
 type JobItemProps = {
   job: JobType;
@@ -27,21 +28,30 @@ const JobItem = (props: JobItemProps) => {
     return stillWorking ? `${diffDays} days and counting` : `${diffDays} days`;
   };
 
+  const jobMDX = () => {
+    switch (id) {
+      case 1:
+        return <Sessions />;
+      case 2:
+        return <Unclebob />;
+      case 3:
+        return <HomeWork />;
+    }
+  };
+
   return (
     <div className="flex flex-col">
       <div
         onClick={() => handleSelectJob(job)}
         className={cls(
-          !isSelected && "opacity-20 cursor-pointer",
+          !isSelected && "opacity-20 cursor-pointer hover:opacity-60",
           "flex flex-row relative items-center w-fit"
         )}
         id={id.toString()}
       >
         <FakeCheckbox isEmpty={!isSelected} />
         <div className="ml-4 flex flex-row gap-2 items-center">
-          <h1 className="text-lg font-semibold">
-            {job.jobTitle} @{job.company}
-          </h1>
+          <h1 className="text-lg font-semibold">@{job.company}</h1>
           &mdash;
           <p className="flex-wrap text-sm lg:text-base text-ellipsis">
             {getDaysCount(job.startDate, job.endDate, job.stillWorking)}
@@ -51,7 +61,7 @@ const JobItem = (props: JobItemProps) => {
 
       {isSelected ? (
         <>
-          <div className="text-sm mt-2 flex flex-col gap-2">
+          <div className="text-sm mt-2 flex flex-col gap-2 animate-fadeInDown">
             {selectedJob?.companyDescription.map((text, index) => {
               return <p key={index}>{text}</p>;
             })}
@@ -59,7 +69,10 @@ const JobItem = (props: JobItemProps) => {
           <div className="flex flex-row gap-x-2 mt-2 flex-wrap">
             {selectedJob?.techStack.map((tech, index) => {
               return (
-                <div key={index} className="flex flex-row items-center gap-2">
+                <div
+                  key={index}
+                  className="flex flex-row items-center gap-2 animate-fadeInDown"
+                >
                   <p className="text-xs">[{tech}]</p>{" "}
                   {index + 1 !== selectedJob?.techStack.length && (
                     <span>&#8226;</span>
@@ -71,17 +84,7 @@ const JobItem = (props: JobItemProps) => {
         </>
       ) : null}
 
-      {isSelected && (
-        <div className="lg:w-1/2  lg:hidden mt-4">
-          {selectedJob?.jobDetails?.map((job, index) => {
-            return (
-              <div key={index + 2} className="mb-6">
-                <JobDetails job={job} />
-              </div>
-            );
-          })}
-        </div>
-      )}
+      {isSelected && <div className="lg:w-1/2  lg:hidden mt-4">{jobMDX()}</div>}
     </div>
   );
 };

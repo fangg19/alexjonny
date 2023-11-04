@@ -1,17 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
 import { JobType, jobs } from "../../utils/jobs";
-import {
-  FadeInLeft,
-  StaggerContainer,
-  StaggerItem,
-} from "@/app/animations/animations";
-import { motion } from "framer-motion";
 import JobItem from "../JobItem";
-import JobDetails from "../JobDetails";
 import { scrollToElement } from "@/app/utils/utils";
 import useIsMobile from "@/app/utils/use-is-mobile-hook";
 import { jobSectionLabels } from "@/app/utils/constants";
+import HomeWork from "@/app/home-work.mdx";
+import Sessions from "@/app/sessions.mdx";
+import Unclebob from "@/app/unclebob.mdx";
 
 const Work = () => {
   const [selectedJob, setSelectedJob] = useState<JobType | null>(null);
@@ -38,17 +34,23 @@ const Work = () => {
       ? jobSectionLabels.current
       : jobSectionLabels.past;
 
+  const jobMDX = () => {
+    switch (selectedJob?.id) {
+      case 1:
+        return <Sessions />;
+      case 2:
+        return <Unclebob />;
+      case 3:
+        return <HomeWork />;
+    }
+  };
+
   return (
     <div id="work" className="flex flex-col w-full gap-2 mb-12 lg:mb-0">
-      <motion.h1
-        variants={FadeInLeft}
-        initial="hidden"
-        animate="visible"
-        className="text-xl font-bold  text-neutral-600"
-        key={labelText}
-      >
+      <h1 className="text-xl font-bold  text-neutral-600 animate-fadeInLeft">
         {labelText}
-      </motion.h1>
+      </h1>
+
       <div className="w-full h-[2px] bg-neutral-800 mb-6" />
 
       <div className="flex flex-col lg:flex-row justify-between w-full">
@@ -66,25 +68,7 @@ const Work = () => {
           })}
         </div>
 
-        <motion.div
-          variants={StaggerContainer}
-          initial="hidden"
-          animate="visible"
-          className="lg:w-1/2 hidden lg:block"
-          key={selectedJob?.id}
-        >
-          {selectedJob?.jobDetails?.map((job, index) => {
-            return (
-              <motion.div
-                variants={StaggerItem}
-                key={job?.title}
-                className="mb-6"
-              >
-                <JobDetails job={job} />
-              </motion.div>
-            );
-          })}
-        </motion.div>
+        <div className="lg:w-1/2 hidden lg:block">{jobMDX()}</div>
       </div>
     </div>
   );
