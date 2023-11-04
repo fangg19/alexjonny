@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Button from "./Button";
 import { FieldValues, useForm } from "react-hook-form";
-import Loader from "./Loader";
+import EmailLoader from "./EmailLoader";
 import { cls } from "../utils/utils";
 
 interface FormProps {
@@ -175,7 +175,7 @@ const ContactForm = () => {
       ) : null}
       {loader ? (
         <div className="w-full h-full flex flex-col items-center justify-center">
-          <Loader />
+          <EmailLoader />
           <h3>Sending your message...</h3>
         </div>
       ) : null}
