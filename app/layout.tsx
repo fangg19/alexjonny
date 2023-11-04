@@ -8,7 +8,10 @@ import { GeistMono } from "geist/font";
 export const metadata: Metadata = {
   title: "alexjonny",
   description: "I'm Jonny and I like to code I think.",
-  authors: [{ name: "Serban Alexandru Jonny", url: "https://alexjonny.com" }],
+  authors: [
+    { name: "Serban Alexandru Jonny", url: "https://alexjonny.com" },
+    { name: "fangg19", url: "https://alexjonny.com" },
+  ],
   category: "Portfolio",
   metadataBase: new URL("https://alexjonny.com"),
   viewport: "width=device-width, initial-scale=1.0",
