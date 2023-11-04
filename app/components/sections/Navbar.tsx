@@ -21,18 +21,18 @@ const Navbar = () => {
   if (pathname !== "/") return null;
 
   return (
-    <nav
-      key="navbar"
+    <header
+      key="header"
       className={cls(
         showNavMenu && "bg-neutral-900",
         "w-full flex flex-row items-center justify-between text-sm py-4 px-4 md:px-20 sticky top-0 z-20 bg-neutral-900"
       )}
     >
       <Logo />
-      <div className="flex flex-row items-center gap-5">
+      <nav className="flex flex-row items-center gap-5">
         {showNavMenu && (
           <ul
-            key="header"
+            key="navbar"
             className="flex flex-row justify-center items-center animate-fadeInRight"
           >
             {INTERNAL_NAV_LINKS.map((link, index) => {
@@ -65,14 +65,14 @@ const Navbar = () => {
           ) : (
             <p
               key="menu-button"
-              className="text-sm cursor-pointer hover:text-neutral-900 hover:bg-neutral-200"
+              className="text-sm cursor-pointer hover:text-neutral-900 hover:bg-neutral-200 transition-all duration-300 ease-in-out"
             >
               menu
             </p>
           )}
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 };
 

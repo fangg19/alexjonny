@@ -30,6 +30,6 @@ export const EXTERNAL_NAV_LINKS = [
   },
   {
     name: "resume",
-    url: "https://www.linkedin.com/in/alexandru-jonny-%C5%9Ferban-977b1014b/",
+    url: "/2023_Resume_Serban_Alex_Jonny.pdf",
   },
 ];

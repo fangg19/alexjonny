@@ -17,7 +17,7 @@ module.exports = {
         "primary-white": "#E5E5E5",
         "primary-black": "#171717",
         "primary-gray": "#353535",
-        "primary-accent": "#8B5CF6",
+        "primary-accent": "#10b981",
       },
 
 
