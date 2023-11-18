@@ -26,7 +26,7 @@ const Button = (props: ButtonProps) => {
                 : "border-neutral-200 border-2 bg-neutral-200 text-neutral-900",
               isPrivate && "opacity-40",
               "hover:bg-primary-accent hover:text-neutral-200",
-              className
+              className,
             )}
             onClick={onClick}
           >
@@ -42,7 +42,7 @@ const Button = (props: ButtonProps) => {
               : "border-neutral-200 border-2 bg-neutral-200 text-neutral-900",
             isPrivate && "opacity-40",
             "hover:bg-primary-accent hover:text-neutral-200",
-            className
+            className,
           )}
           onClick={onClick}
         >

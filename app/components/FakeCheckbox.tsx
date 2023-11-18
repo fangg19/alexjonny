@@ -3,7 +3,7 @@ type FakeCheckboxProps = {
 };
 
 const FakeCheckbox = (props: FakeCheckboxProps) => {
-  return (
+   return (
     <>
       {!props.isEmpty ? (
         <div className="h-4 w-4 bg-transparent ring-2 ring-primary-accent relative">
@@ -14,6 +14,6 @@ const FakeCheckbox = (props: FakeCheckboxProps) => {
       )}
     </>
   );
-};
+}
 
 export default FakeCheckbox;

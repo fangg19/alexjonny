@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
 import { keywords } from "./utils/keywords";
 import { GeistMono } from "geist/font";
+import Footer from "./components/sections/Footer";
 
 export const metadata: Metadata = {
   title: "alexjonny",
@@ -55,6 +56,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Analytics />
+        {/* <Footer /> */}
       </body>
     </html>
   );
