@@ -28,7 +28,7 @@ const Work = () => {
   }, [selectedJob, isMobile]);
 
   const labelText =
-    selectedJob?.id !== jobs[0].id && selectedJob?.id !== jobs[1].id
+    selectedJob?.id !== jobs[1].id && selectedJob?.id !== jobs[2].id
       ? jobSectionLabels.default
       : selectedJob?.id === jobs[0].id
       ? jobSectionLabels.current
@@ -37,11 +37,11 @@ const Work = () => {
   const jobMDX = () => {
     switch (selectedJob?.id) {
       case 1:
-        return <Sessions />;
-      case 2:
-        return <Unclebob />;
-      case 3:
         return <HomeWork />;
+      case 2:
+        return <Sessions />;
+      case 3:
+        return <Unclebob />;
     }
   };
 

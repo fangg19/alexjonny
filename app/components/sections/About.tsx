@@ -36,13 +36,13 @@ const About = () => {
           <strong>&quot;is it really necessary?&quot;</strong>. I enjoy a good
           sense of humor and I am always prepared for a hearty laugh. I
           appreciate beautiful things that I stumble upon.
-          <br />
-          <br />
-          Currently I&apos;m working as a Frontend Developer (sometimes I write
+          {/* <br /> */}
+          {/* <br /> */}
+          {/* Currently I&apos;m working as a Frontend Developer (sometimes I write
           backend code too) at Sessions, a romanian startup. I enjoy working
           with <strong>React</strong> and <strong>Typescript</strong> and at
           home I like to play with <strong>Next.js </strong>
-          mostly.
+          mostly. */}
         </p>
       </div>
     </div>

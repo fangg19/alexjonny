@@ -31,7 +31,7 @@ const Contact = () => {
             individuals and creative minds so don&apos;t hesitate to fill out
             the form or simply send me an e-mail{" "}
             <a
-              className="underline underline-offset-2 text-neutral-800 font-bold px-2 bg-neutral-200"
+              className="text-neutral-800 font-bold px-2 bg-neutral-200"
               href="mailto:hello@alexjonny.com"
               itemProp="email"
             >
