@@ -3,8 +3,8 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
 import { keywords } from "./utils/keywords";
-import { GeistMono } from "geist/font";
-import Footer from "./components/sections/Footer";
+import { GeistMono } from "geist/font/mono";
+import type { Viewport } from "next";
 
 export const metadata: Metadata = {
   title: "alexjonny",
@@ -15,10 +15,7 @@ export const metadata: Metadata = {
   ],
   category: "Portfolio",
   metadataBase: new URL("https://alexjonny.com"),
-  viewport: "width=device-width, initial-scale=1.0",
-  colorScheme: "dark",
   keywords: keywords.join(", "),
-  themeColor: "dark",
   robots: {
     follow: true,
     index: true,
@@ -43,6 +40,12 @@ export const metadata: Metadata = {
     emails: ["hello@alexjonny.com", "alexjohnny6@gmail.com"],
     type: "website",
   },
+};
+
+export const viewport: Viewport = {
+  width: "width=device-width, initial-scale=1.0",
+  colorScheme: "dark",
+  themeColor: "dark",
 };
 
 export default function RootLayout({
