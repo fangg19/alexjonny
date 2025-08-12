@@ -31,11 +31,11 @@ const JobItem = (props: JobItemProps) => {
   const jobMDX = () => {
     switch (id) {
       case 1:
-        return <Sessions />;
-      case 2:
-        return <Unclebob />;
-      case 3:
         return <HomeWork />;
+      case 2:
+        return <Sessions />;
+      case 3:
+        return <Unclebob />;
     }
   };
 
