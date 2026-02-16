@@ -30,7 +30,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
   // };
 
   // const paragraphStyles = {
-  //   textAlign: "justify" as const,
+  //   textAlign: "justify",
   // };
 
   return {

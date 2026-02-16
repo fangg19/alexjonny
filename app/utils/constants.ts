@@ -30,6 +30,6 @@ export const EXTERNAL_NAV_LINKS = [
   },
   {
     name: "resume",
-    url: "/2023_Resume_Serban_Alex_Jonny.pdf",
+    url: "/Serban_Alex_Jonny_Resume_FEB_2026.pdf",
   },
 ];
