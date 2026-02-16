@@ -35,6 +35,48 @@ export const jobs: JobType[] = [
   },
   {
     id: 2,
+    company: "Archbee",
+    companyDescription: [
+      "I've spent two years working at Sessions, a complex and yet an user-friendly videoconferencing platform.",
+      "A fast growing startup with over 60.000 users, Sessions strives to be a better choice for videoconferencing by having the required set of tools in one place.",
+      "I had a role in developing the web app, maintaining the codebase and implementing new features.",
+    ],
+    period: "aug 2025 - present",
+    startDate: new Date("2025-08-25"),
+    endDate: new Date(),
+    stillWorking: true,
+    techStack: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+    ],
+  },
+  {
+    id: 3,
+    company: "deadlock.sh",
+    companyDescription: [
+      "I've spent two years working at Sessions, a complex and yet an user-friendly videoconferencing platform.",
+      "A fast growing startup with over 60.000 users, Sessions strives to be a better choice for videoconferencing by having the required set of tools in one place.",
+      "I had a role in developing the web app, maintaining the codebase and implementing new features.",
+    ],
+    period: "sept 2024 - aug 2025",
+    startDate: new Date("2024-09-10"),
+    endDate: new Date("2025-08-15"),
+    stillWorking: false,
+    techStack: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "GraphQL",
+      "Node.js",
+      "Prisma",
+      "SCSS",
+    ],
+  },
+  {
+    id: 4,
     company: "Sessions",
     companyDescription: [
       "I've spent two years working at Sessions, a complex and yet an user-friendly videoconferencing platform.",
@@ -56,7 +98,7 @@ export const jobs: JobType[] = [
     ],
   },
   {
-    id: 3,
+    id: 5,
     company: "UncleBob",
     companyDescription: [
       "For almost a year I worked at UncleBob. The place where it all started.",
